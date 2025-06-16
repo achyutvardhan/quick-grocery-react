@@ -1,0 +1,810 @@
+{
+  "blog": [
+    {
+      "id": "1",
+      "title": "10 Superfoods to Boost Your Immunity",
+      "date": "May 5, 2025",
+      "excerpt": "Discover the power of these amazing foods that can help strengthen your immune system naturally.",
+      "image": "https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "alt": "Superfoods",
+      "link": "#"
+    },
+    {
+      "id": "2",
+      "title": "Easy Ways to Include More Vegetables in Your Diet",
+      "date": "May 2, 2025",
+      "excerpt": "Simple tips and tricks to incorporate more vegetables into your daily meals without sacrificing flavor.",
+      "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "alt": "Cooking Vegetables",
+      "link": "#"
+    },
+    {
+      "id": "3",
+      "title": "Sustainable Grocery Shopping Guide",
+      "date": "April 27, 2025",
+      "excerpt": "Learn how to make eco-friendly choices when shopping for groceries and reduce your environmental impact.",
+      "image": "https://plus.unsplash.com/premium_photo-1667385010653-dc544b00b75c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "alt": "Sustainable Shopping",
+      "link": "#"
+    },
+    {
+      "id": "4",
+      "title": "Weekend Meal Prep: Save Time and Eat Healthy",
+      "date": "April 20, 2025",
+      "excerpt": "A complete guide to efficient meal preparation that will save you time during the busy week.",
+      "image": "https://images.unsplash.com/photo-1556910633-5099dc3971e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "alt": "Meal Prep",
+      "link": "#"
+    },
+    {
+      "id": "5",
+      "title": "Seasonal Fruits: Why They're Better for You and the Planet",
+      "date": "April 15, 2025",
+      "excerpt": "The benefits of choosing seasonal produce and a handy guide to what's in season now.",
+      "image": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "alt": "Seasonal Fruits",
+      "link": "#"
+    },
+    {
+      "id": "6",
+      "title": "Beginner's Guide to Baking Your Own Bread",
+      "date": "April 10, 2025",
+      "excerpt": "Simple recipes and techniques to help you start making delicious homemade bread.",
+      "image": "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "alt": "Baking Bread",
+      "link": "#"
+    }
+  ],
+  "cartItem": [
+    {
+      "id": "dfde",
+      "name": "Apple",
+      "price": 0.99,
+      "description": "Crisp, juicy, and rich in fiber.",
+      "image": "https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg",
+      "quantity": 9,
+      "unit": "each"
+    },
+    {
+      "id": "a7a3",
+      "name": "Strawberry",
+      "price": 2.99,
+      "description": "Sweet berries packed with antioxidants.",
+      "image": "https://burst.shopifycdn.com/photos/ripe-red-strawberries-in-a-white-bowl.jpg?width=373&format=pjpg&exif=0&iptc=0",
+      "quantity": 2,
+      "unit": "1 lb"
+    },
+    {
+      "id": "b68d",
+      "name": "Banana",
+      "price": 0.59,
+      "description": "Naturally sweet and potassium-rich.",
+      "image": "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350",
+      "quantity": 1,
+      "unit": "each"
+    },
+    {
+      "id": "bdb8",
+      "name": "Milk",
+      "price": 3.49,
+      "description": "Whole milk, pasteurized and vitamin D fortified.",
+      "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWlsa3xlbnwwfHwwfHx8Mg%3D%3D",
+      "quantity": 6,
+      "unit": "gallon"
+    }
+  ],
+  "product": {
+    "Fruits": [
+      {
+        "id": 1,
+        "name": "Apple",
+        "description": "Crisp, juicy, and rich in fiber.",
+        "images": [
+          "https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg",
+          "https://cdn.stocksnap.io/img-thumbs/960w/hand-apple_BQATCHSOHR.jpg",
+          "https://cdn.stocksnap.io/img-thumbs/960w/red-apple_VXET3VQIV3.jpg"
+        ],
+        "price": 0.99,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Red/Green skin",
+          "Vitamin C",
+          "USA origin"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Banana",
+        "description": "Naturally sweet and potassium-rich.",
+        "images": [
+          "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350",
+          "https://cdn.stocksnap.io/img-thumbs/960w/bananas-fruits_D0C5D92CD9.jpg",
+          "https://media.istockphoto.com/id/1214191768/photo/banana-on-the-wooden-background-top-view.jpg?s=612x612&w=0&k=20&c=mNAMpDWwdT_Wv-Jzq3bIiY9CQE6pHNx3V7dsNPXi_mY="
+        ],
+        "price": 0.59,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Yellow peel",
+          "Easy to digest",
+          "Fair-trade"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Strawberry",
+        "description": "Sweet berries packed with antioxidants.",
+        "images": [
+          "https://burst.shopifycdn.com/photos/ripe-red-strawberries-in-a-white-bowl.jpg?width=373&format=pjpg&exif=0&iptc=0",
+          "https://burst.shopifycdn.com/photos/hidden-strawberry.jpg?width=373&format=pjpg&exif=0&iptc=0",
+          "https://burst.shopifycdn.com/photos/dropped-strawberries.jpg?width=373&format=pjpg&exif=0&iptc=0"
+        ],
+        "price": 2.99,
+        "unit": "1 lb",
+        "quantity": 1,
+        "features": [
+          "Bright red",
+          "Seeded exterior",
+          "California grown"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Orange",
+        "description": "Juicy citrus rich in vitamin C.",
+        "images": [
+          "https://images.freeimages.com/images/large-previews/f0d/juicy-oranges-1325676.jpg?fmt=webp&h=350",
+          "https://images.freeimages.com/images/large-previews/f40/oranges-1325500.jpg?fmt=webp&h=350",
+          "https://images.freeimages.com/images/large-previews/9a1/oranges-at-tree-1325437.jpg?fmt=webp&h=350"
+        ],
+        "price": 1.19,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Navel variety",
+          "Florida origin",
+          "Citrus aroma"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Grape",
+        "description": "Seedless, sweet-tart snack grapes.",
+        "images": [
+          "https://images.freeimages.com/images/large-previews/a27/grape-wine-1327179.jpg?fmt=webp&w=500",
+          "https://images.freeimages.com/variants/fGUG36uYpXzdsLXehWfqcBTx/f4a36f6589a0e50e702740b15352bc00e4bfaf6f58bd4db850e167794d05993d?fmt=webp&w=500",
+          "https://images.freeimages.com/images/large-previews/80c/basket-of-grapes-3-1326154.jpg?fmt=webp&w=500"
+        ],
+        "price": 2.49,
+        "unit": "1 lb",
+        "quantity": 1,
+        "features": [
+          "Purple/green",
+          "Resveratrol rich",
+          "Clamshell pack"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Mango",
+        "description": "Tropical fruit with creamy flesh.",
+        "images": [
+          "https://images.freeimages.com/variants/Ttv3Ms3YrFVjV2D6UcAj8En9/f4a36f6589a0e50e702740b15352bc00e4bfaf6f58bd4db850e167794d05993d?fmt=webp&w=500",
+          "https://images.freeimages.com/images/large-previews/1fb/mangos-2-1183946.jpg?fmt=webp&h=350",
+          "https://media.istockphoto.com/id/2154101350/photo/fresh-mango-tropical-fruit-with-green-leaf-ripe-mango-in-grass.webp?b=1&s=612x612&w=0&k=20&c=MdaOENFdHovKJ0tuvajmm1p5od8rW3802JSRnl_tQBc="
+        ],
+        "price": 1.79,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Alphonso variety",
+          "Vitamin A",
+          "Naturally ripened"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Pineapple",
+        "description": "Sweet-tart fruit, crown intact.",
+        "images": [
+          "https://images.freeimages.com/images/large-previews/4ea/pineapple-1324089.jpg?fmt=webp&w=500",
+          "https://images.freeimages.com/variants/82GtRvUcn2uki1XYjf8YHL4d/f4a36f6589a0e50e702740b15352bc00e4bfaf6f58bd4db850e167794d05993d?fmt=webp&w=500",
+          "https://media.istockphoto.com/id/185263471/photo/pineapple.webp?b=1&s=612x612&w=0&k=20&c=rDKl9cScvGVilR1SyCvj5h5_ERRXFYPqB812NtFoe18="
+        ],
+        "price": 3.29,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Costa Rica origin",
+          "Rich in bromelain",
+          "Spiky rind"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Blueberry",
+        "description": "Tiny berries bursting with flavor.",
+        "images": [
+          "https://images.freeimages.com/images/large-previews/c5d/blueberries-1323372.jpg?fmt=webp&w=500",
+          "https://images.freeimages.com/variants/MQUJHnVXoCmQvewbxVRiYC4M/f4a36f6589a0e50e702740b15352bc00e4bfaf6f58bd4db850e167794d05993d?fmt=webp&w=500",
+          "https://media.istockphoto.com/id/171314137/photo/blueberries-ready-for-picking.webp?b=1&s=612x612&w=0&k=20&c=ljcJ_qlaKpAyn9RgLbU58yFETKPd_PulvGrDNQOieIY="
+        ],
+        "price": 3.49,
+        "unit": "1 pint",
+        "quantity": 1,
+        "features": [
+          "Wild variety",
+          "Antioxidant rich",
+          "Hand-picked"
+        ]
+      }
+    ],
+    "Vegetables": [
+      {
+        "id": 1,
+        "name": "Carrot",
+        "description": "Crunchy orange roots full of beta-carotene.",
+        "images": [
+          "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1590868309235-ea34bed7bd7f?q=80&w=1227&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1636743714964-344d608214cd?q=80&w=985&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "price": 0.79,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Locally grown",
+          "Washed & trimmed",
+          "Sweet flavor"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Broccoli",
+        "description": "Tender green florets, vitamin K rich.",
+        "images": [
+          "https://images.unsplash.com/photo-1628773822503-930a7eaecf80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1587351177732-5b0739d1bd44?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1518164147695-36c13dd568f5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJvY29sbGl8ZW58MHx8MHx8fDI%3D"
+        ],
+        "price": 1.29,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Non-GMO",
+          "California grown",
+          "Steams quickly"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Spinach",
+        "description": "Baby leaves, iron-rich and ready to eat.",
+        "images": [
+          "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3BpbmFjaHxlbnwwfHwwfHx8Mg%3D%3D",
+          "https://images.unsplash.com/photo-1580910365203-91ea9115a319?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BpbmFjaHxlbnwwfHwwfHx8Mg%3D%3D",
+          "https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3BpbmFjaHxlbnwwfHwwfHx8Mg%3D%3D"
+        ],
+        "price": 1.99,
+        "unit": "bag",
+        "quantity": 1,
+        "features": [
+          "Triple-washed",
+          "Organic certified",
+          "Tender texture"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Tomato",
+        "description": "Juicy vine-ripened tomatoes.",
+        "images": [
+          "https://images.unsplash.com/photo-1517666005606-69dea9b54865?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1501645963220-a20faa7494ba?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1725467481377-413f5e6a1fe2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "price": 0.89,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "High lycopene",
+          "Greenhouse grown",
+          "Round variety"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Potato",
+        "description": "Starchy russet, ideal for baking.",
+        "images": [
+          "https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1508313880080-c4bef0730395?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1635774855536-9728f2610245?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "price": 0.49,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Idaho grown",
+          "Brown skin",
+          "Fluffy interior"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Onion",
+        "description": "Pungent yellow onion with long shelf life.",
+        "images": [
+          "https://images.unsplash.com/photo-1611139858470-2dc796805824?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JTIybmFtZSUyMiUzQSUyMCUyMk9uaW9uJTIyJTJDfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1594100585731-c41826948ea8?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JTIybmFtZSUyMiUzQSUyMCUyMk9uaW9uJTIyJTJDfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1636210589073-dc4bef9a5085?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8JTIybmFtZSUyMiUzQSUyMCUyMk9uaW9uJTIyJTJDfGVufDB8fDB8fHwy"
+        ],
+        "price": 0.39,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "High quercetin",
+          "Layered flesh",
+          "Versatile"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Lettuce",
+        "description": "Crisp iceberg lettuce, low in calories.",
+        "images": [
+          "https://images.unsplash.com/photo-1611105637889-3afd7295bdbf?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JTIybmFtZSUyMiUzQSUyMCUyMkxldHR1Y2UlMjIlMkN8ZW58MHx8MHx8fDA%3D",
+          "https://images.unsplash.com/photo-1612231653032-8a93d1de0834?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8JTIybmFtZSUyMiUzQSUyMCUyMkxldHR1Y2UlMjIlMkN8ZW58MHx8MHx8fDA%3D",
+          "https://images.unsplash.com/photo-1571947457091-ec930f5120dc?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8JTIybmFtZSUyMiUzQSUyMCUyMkxldHR1Y2UlMjIlMkN8ZW58MHx8MHx8fDA%3D"
+        ],
+        "price": 1.09,
+        "unit": "head",
+        "quantity": 1,
+        "features": [
+          "Hydroponic grown",
+          "Pre-chilled",
+          "Crunchy leaves"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Cucumber",
+        "description": "Seedless English cucumber, refreshing crunch.",
+        "images": [
+          "https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q3VjdW1iZXJ8ZW58MHx8MHx8fDA%3D",
+          "https://images.unsplash.com/photo-1587411768638-ec71f8e33b78?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q3VjdW1iZXJ8ZW58MHx8MHx8fDA%3D",
+          "https://images.unsplash.com/photo-1568584711271-6c929fb49b60?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEN1Y3VtYmVyfGVufDB8fDB8fHww"
+        ],
+        "price": 0.99,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Thin skin",
+          "Hydrating",
+          "Plastic wrapped"
+        ]
+      }
+    ],
+    "Dairy": [
+      {
+        "id": 1,
+        "name": "Milk",
+        "description": "Whole milk, pasteurized and vitamin D fortified.",
+        "images": [
+          "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWlsa3xlbnwwfHwwfHx8Mg%3D%3D",
+          "https://images.unsplash.com/photo-1517448931760-9bf4414148c5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWlsa3xlbnwwfHwwfHx8Mg%3D%3D",
+          "https://images.unsplash.com/photo-1523473827533-2a64d0d36748?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWlsa3xlbnwwfHwwfHx8Mg%3D%3D"
+        ],
+        "price": 3.49,
+        "unit": "gallon",
+        "quantity": 1,
+        "features": [
+          "rBST-free",
+          "Creamy taste",
+          "Family size"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Cheese",
+        "description": "Sharp cheddar aged 12 months.",
+        "images": [
+          "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hlZXNlfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1683314573422-649a3c6ad784?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2hlZXNlfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1589881133595-a3c085cb731d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q2hlZXNlfGVufDB8fDB8fHwy"
+        ],
+        "price": 4.99,
+        "unit": "block",
+        "quantity": 1,
+        "features": [
+          "Wisconsin made",
+          "Rich flavor",
+          "No additives"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Yogurt",
+        "description": "Greek-style, high-protein plain yogurt.",
+        "images": [
+          "https://images.unsplash.com/photo-1562114808-b4b33cf60f4f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9ndXJ0fGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1564149503905-7fef56abc1f2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8eW9ndXJ0fGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1641196936589-7df4db18de66?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHlvZ3VydHxlbnwwfHwwfHx8Mg%3D%3D"
+        ],
+        "price": 1.29,
+        "unit": "cup",
+        "quantity": 1,
+        "features": [
+          "Probiotics",
+          "Low fat",
+          "Creamy texture"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Butter",
+        "description": "Unsalted butter from grass-fed cows.",
+        "images": [
+          "https://images.unsplash.com/photo-1589985269102-ff38adf6f00d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnV0dGVyfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1662988564746-4fc159c87f2d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnV0dGVyfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1590912710024-6d51a6771abd?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnV0dGVyfGVufDB8fDB8fHwy"
+        ],
+        "price": 2.79,
+        "unit": "stick",
+        "quantity": 1,
+        "features": [
+          "Creamy texture",
+          "No salt",
+          "Natural color"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Cream",
+        "description": "Heavy whipping cream, ultra-pasteurized.",
+        "images": [
+          "https://images.unsplash.com/photo-1586558284713-ba390c1a042a?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3JlYW0lMjBtaWxrfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1589985270319-40629f6ae936?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpcHBlZCUyMGNyZWFtfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1583130879758-db8ac95a9b68?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2hpcHBlZCUyMGNyZWFtfGVufDB8fDB8fHwy"
+        ],
+        "price": 1.99,
+        "unit": "pint",
+        "quantity": 1,
+        "features": [
+          "36% fat",
+          "Pour-spout",
+          "Locally sourced"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Ice Cream",
+        "description": "Vanilla bean ice cream, slow churned.",
+        "images": [
+          "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SWNlJTIwQ3JlYW18ZW58MHx8MHx8fDA%3D",
+          "https://images.unsplash.com/photo-1560008581-09826d1de69e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SWNlJTIwQ3JlYW18ZW58MHx8MHx8fDA%3D",
+          "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SWNlJTIwQ3JlYW18ZW58MHx8MHx8fDA%3D"
+        ],
+        "price": 3.99,
+        "unit": "pint",
+        "quantity": 1,
+        "features": [
+          "Real cream",
+          "Natural flavor",
+          "Smooth texture"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Cottage Cheese",
+        "description": "Small-curd, high-protein cottage cheese.",
+        "images": [
+          "https://images.unsplash.com/photo-1559561853-08451507cbe7?q=80&w=957&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1570917333569-eb1ad88fd4c1?q=80&w=1049&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1632200751394-832eb7d4ce5d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "price": 2.49,
+        "unit": "cup",
+        "quantity": 1,
+        "features": [
+          "4% milkfat",
+          "Cultured",
+          "Resealable cup"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Sour Cream",
+        "description": "Rich & tangy all-natural sour cream.",
+        "images": [
+          "https://images.unsplash.com/photo-1637194502327-c99c94943680?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U291ciUyMENyZWFtJTIwd2hpcHBlZHxlbnwwfHwwfHx8MA%3D%3D",
+          "https://images.unsplash.com/photo-1686998423980-ab223d183055?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U291ciUyMENyZWFtJTIwd2hpcHBlZHxlbnwwfHwwfHx8MA%3D%3D",
+          "https://images.unsplash.com/photo-1650419741906-1cdead9c9b4f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U291ciUyMENyZWFtJTIwd2hpcHBlZHxlbnwwfHwwfHx8MA%3D%3D"
+        ],
+        "price": 1.69,
+        "unit": "tub",
+        "quantity": 1,
+        "features": [
+          "Thick consistency",
+          "No gelatin",
+          "16-oz size"
+        ]
+      }
+    ],
+    "Bakery": [
+      {
+        "id": 1,
+        "name": "Bread",
+        "description": "Whole-wheat loaf, baked fresh daily.",
+        "images": [
+          "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJlYWR8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1533782654613-826a072dd6f3?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnJlYWR8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJlYWR8ZW58MHx8MHx8fDI%3D"
+        ],
+        "price": 2.49,
+        "unit": "loaf",
+        "quantity": 1,
+        "features": [
+          "No preservatives",
+          "Soft crumb",
+          "Fiber rich"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Croissant",
+        "description": "Flaky, butter-rich French pastry.",
+        "images": [
+          "https://images.unsplash.com/photo-1691480162735-9b91238080f6?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1591521771366-061035830132?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1619540158662-bb74607515f2?q=80&w=1049&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "price": 2.19,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Hand-rolled",
+          "Baked daily",
+          "Golden layers"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Muffin",
+        "description": "Blueberry muffin with real berries.",
+        "images": [
+          "https://images.unsplash.com/photo-1578632398050-cccbc1461ab9?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVmZmlufGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1636118128238-1e68a4e4b6c8?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bXVmZmlufGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1587022058028-c084ee8dc31f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bXVmZmlufGVufDB8fDB8fHwy"
+        ],
+        "price": 1.99,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Moist crumb",
+          "Individually wrapped",
+          "120 g"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Bagel",
+        "description": "Chewy NY-style plain bagel.",
+        "images": [
+          "https://images.unsplash.com/photo-1627308595260-6fad84c40413?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmFnZWx8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1518562923427-19e694fbd8e9?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QmFnZWx8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1592767049184-0fda840ae4e7?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QmFnZWx8ZW58MHx8MHx8fDI%3D"
+        ],
+        "price": 1.49,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Boiled then baked",
+          "6-pack",
+          "Soft interior"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Donut",
+        "description": "Light yeast-raised donut with glaze.",
+        "images": [
+          "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RG9udXR8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1527515545081-5db817172677?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8RG9udXR8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1464347477106-7648bc26261b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8RG9udXR8ZW58MHx8MHx8fDI%3D"
+        ],
+        "price": 1.29,
+        "unit": "each",
+        "quantity": 1,
+        "features": [
+          "Freshly fried",
+          "Sweet coating",
+          "Soft texture"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Baguette",
+        "description": "Crusty French baguette, stone baked.",
+        "images": [
+          "https://images.unsplash.com/photo-1691862469586-9c7c183b27b7?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmFndWV0dGV8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1568471173242-461f0a730452?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmFndWV0dGV8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1667637708579-0b1da755a638?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QmFndWV0dGV8ZW58MHx8MHx8fDI%3D"
+        ],
+        "price": 2.79,
+        "unit": "loaf",
+        "quantity": 1,
+        "features": [
+          "20-inch loaf",
+          "Soft interior",
+          "Traditional recipe"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Cake",
+        "description": "Rich chocolate fudge cake, 8-inch.",
+        "images": [
+          "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=1050&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+          "https://images.unsplash.com/photo-1518047601542-79f18c655718?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8"
+        ],
+        "price": 9.99,
+        "unit": "cake",
+        "quantity": 1,
+        "features": [
+          "Ganache topping",
+          "Serves 8",
+          "Made to order"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Pie",
+        "description": "Classic apple pie with buttery crust.",
+        "images": [
+          "https://images.unsplash.com/photo-1535920527002-b35e96722eb9?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGllfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1587248720327-8eb72564be1e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGllfGVufDB8fDB8fHwy",
+          "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGllfGVufDB8fDB8fHwy"
+        ],
+        "price": 7.49,
+        "unit": "pie",
+        "quantity": 1,
+        "features": [
+          "9-inch",
+          "Cinnamon spiced",
+          "Hand crimped"
+        ]
+      }
+    ],
+    "Meat": [
+      {
+        "id": 1,
+        "name": "Chicken Breast",
+        "description": "Lean, boneless, skinless chicken breast.",
+        "images": [
+          "https://images.unsplash.com/photo-1633096013004-e2cb4023b560?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hpY2tlbiUyMEJyZWFzdHxlbnwwfHwwfHx8Mg%3D%3D",
+          "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q2hpY2tlbiUyMEJyZWFzdHxlbnwwfHwwfHx8Mg%3D%3D",
+          "https://images.unsplash.com/photo-1680169088018-99fb63803c54?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fENoaWNrZW4lMjBCcmVhc3R8ZW58MHx8MHx8fDI%3D"
+        ],
+        "price": 5.99,
+        "unit": "lb",
+        "quantity": 1,
+        "features": [
+          "Free-range",
+          "Air chilled",
+          "Individually sealed"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Bacon",
+        "description": "Applewood-smoked thick-cut bacon.",
+        "images": [
+          "https://images.unsplash.com/photo-1694983361629-0363ab0d1b49?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1706341841211-1e9773c3a6f7?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1694983361411-73e7b65d58fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8"
+        ],
+        "price": 4.49,
+        "unit": "pack",
+        "quantity": 1,
+        "features": [
+          "12 slices",
+          "No MSG",
+          "Smoked flavor"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Pork Chop",
+        "description": "Center-cut bone-in pork chop.",
+        "images": [
+          "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UG9yayUyMENob3B8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1612871689527-2a6145cc9e86?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UG9yayUyMENob3B8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1612895572325-f029a8494bb5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UG9yayUyMENob3B8ZW58MHx8MHx8fDI%3D"
+        ],
+        "price": 5.49,
+        "unit": "lb",
+        "quantity": 1,
+        "features": [
+          "No added hormones",
+          "Tender texture",
+          "Vacuum packed"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Turkey",
+        "description": "93% lean ground turkey.",
+        "images": [
+          "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VHVya2V5JTIwbWVhdHxlbnwwfHwwfHx8Mg%3D%3D",
+          "https://images.unsplash.com/photo-1672055905697-a76628065802?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VHVya2V5JTIwbWVhdHxlbnwwfHwwfHx8Mg%3D%3D",
+          "https://images.unsplash.com/photo-1672787380735-2fb682c30b18?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VHVya2V5JTIwbWVhdHxlbnwwfHwwfHx8Mg%3D%3D"
+        ],
+        "price": 6.99,
+        "unit": "lb",
+        "quantity": 1,
+        "features": [
+          "All natural",
+          "Versatile",
+          "1-lb pack"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Lamb",
+        "description": "Grass-fed loin lamb chops.",
+        "images": [
+          "https://images.unsplash.com/photo-1448907503123-67254d59ca4f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TGFtYiUyMG1lYXR8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1630334337820-84afb05acf3a?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TGFtYiUyMG1lYXR8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1560781290-7dc94c0f8f4f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TGFtYiUyMG1lYXR8ZW58MHx8MHx8fDI%3D"
+        ],
+        "price": 8.99,
+        "unit": "lb",
+        "quantity": 1,
+        "features": [
+          "Rich flavor",
+          "New Zealand origin",
+          "4-pack"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Ham",
+        "description": "Honey-glazed boneless smoked ham.",
+        "images": [
+          "https://images.unsplash.com/photo-1672055826545-d7dcc36cc223?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SGFtJTIyJTIwbWVhdHxlbnwwfHwwfHx8Mg%3D%3D",
+          "https://images.unsplash.com/photo-1561374895-884ab932e966?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1572788493895-3a9a445fe36e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
+        ],
+        "price": 4.99,
+        "unit": "lb",
+        "quantity": 1,
+        "features": [
+          "Pre-sliced",
+          "Family size",
+          "Smoked"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Sausage",
+        "description": "Mild Italian pork sausages.",
+        "images": [
+          "https://images.unsplash.com/photo-1569248792801-ea78b4b638aa?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U2F1c2FnZSUyMG1lYXR8ZW58MHx8MHx8fDA%3D",
+          "https://images.unsplash.com/photo-1620487571369-88160295b78c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U2F1c2FnZSUyMG1lYXR8ZW58MHx8MHx8fDI%3D",
+          "https://images.unsplash.com/photo-1691480241974-92481cef09ff?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFNhdXNhZ2UlMjBtZWF0fGVufDB8fDB8fHwy"
+        ],
+        "price": 3.99,
+        "unit": "pack",
+        "quantity": 1,
+        "features": [
+          "Six links",
+          "Herb seasoned",
+          "No nitrates"
+        ]
+      }
+    ]
+  }
+}
