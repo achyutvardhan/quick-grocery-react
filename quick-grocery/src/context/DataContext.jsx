@@ -4,9 +4,7 @@ const DataContext = createContext([]);
 
 const DataProvider = ({children})=>{
     const [data, setData] = useState([]);
-    const responseHandler = (data)=>{
-        // console.log(data)
-         setData(data);}
+    const responseHandler = (data)=>setData(data);
     return (
         <DataContext.Provider value={{data ,responseHandler}}>
             {children}

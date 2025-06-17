@@ -12,18 +12,18 @@ import Signup from "./Auth/Signup";
 import Cart from "./components/Cart";
 import NoPage from "./pages/NoPage";
 import ViewItem from "./components/ViewItem";
-import { useEffect , useContext } from "react";
-import {DataContext} from "./context/DataContext"
+import { useEffect, useContext } from "react";
+import { DataContext } from "./context/DataContext";
 import { productFetch } from "./js/productFetch";
 function App() {
-  const {responseHandler} = useContext(DataContext)
+  const { responseHandler } = useContext(DataContext);
   useEffect(() => {
     const fetchData = async () => {
       const data = await productFetch();
       responseHandler(data);
     };
     fetchData();
-  }, []);
+  },[]);
 
   return (
     <>
@@ -38,6 +38,7 @@ function App() {
             <Route path="/ViewItem/:category/:name" element={<ViewItem />} />
             <Route index element={<Home />} />
             <Route path="ourProduct">
+              <Route index element={<Product />} />
               <Route path=":category" element={<Product />} />
             </Route>
             <Route path="Blog" element={<Blog />} />
