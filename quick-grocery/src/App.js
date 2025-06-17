@@ -11,12 +11,12 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={Layout}>
-            <Route index element={Home} />
-            <Route path="Product" element={Product} />
-            <Route path="Blog" element={Blog} />
-            <Route path="Contact" element={Contact} />
-            <Route path="SpecialOffer" element={SpecialOffer} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="Product" element={<Product />} />
+            <Route path="Blog" element={<Blog />} />
+            <Route path="Contact" element={<Contact />} />
+            <Route path="SpecialOffer" element={<SpecialOffer />} />
           </Route>
         </Routes>
       </BrowserRouter>
