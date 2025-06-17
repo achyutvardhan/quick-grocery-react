@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ViewItem() {
+export default function AddToCart() {
   return (
     <div>
       
