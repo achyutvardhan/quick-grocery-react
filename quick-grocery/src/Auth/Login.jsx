@@ -1,25 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import styles from "../css/login.module.css";
 import { Link } from "react-router";
+import { LoginFetch } from "../js/ProfileFetch";
+import { AuthContext } from "../context/AuthContext";
+import { ProfileContext } from "../context/ProfileContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState(""); // Added error state for demonstration
-
+  const [error, setError] = useState("");
+  const { login } = useContext(AuthContext);
+  const { setProfile } = useContext(ProfileContext);
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Basic validation example
     if (!email || !password) {
       setError("Please enter both email and password.");
       return;
     }
-    setError(""); // Clear error
-    // Handle login logic here
-    console.log("Email:", email, "Password:", password);
-    // Example: Faking a login error
-    // setTimeout(() => setError("Invalid email or password."), 1000);
+    setError("");
+    const checkProfile = async () => {
+      const result = await LoginFetch(email, password);
+      if (result?.status) {
+        console.log("loggedin");
+        const profile = result?.data;
+        login();
+        setProfile(profile);
+      } else {
+        setError(`${result.message}`);
+      }
+    };
+    checkProfile();
   };
 
   return (

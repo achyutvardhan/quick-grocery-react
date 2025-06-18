@@ -55,42 +55,25 @@
       "link": "#"
     }
   ],
-  "cartItem": [
+  "cartItem": [],
+  "profile": [
     {
-      "id": "dfde",
-      "name": "Apple",
-      "price": 0.99,
-      "description": "Crisp, juicy, and rich in fiber.",
-      "image": "https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg",
-      "quantity": 9,
-      "unit": "each"
+      "id": "1",
+      "name": "example",
+      "email": "example@gmail.com",
+      "password": "1234567890"
     },
     {
-      "id": "a7a3",
-      "name": "Strawberry",
-      "price": 2.99,
-      "description": "Sweet berries packed with antioxidants.",
-      "image": "https://burst.shopifycdn.com/photos/ripe-red-strawberries-in-a-white-bowl.jpg?width=373&format=pjpg&exif=0&iptc=0",
-      "quantity": 2,
-      "unit": "1 lb"
+      "id": "5ac0",
+      "name": "Achyut",
+      "email": "a@g.com",
+      "password": "1234567890"
     },
     {
-      "id": "b68d",
-      "name": "Banana",
-      "price": 0.59,
-      "description": "Naturally sweet and potassium-rich.",
-      "image": "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350",
-      "quantity": 1,
-      "unit": "each"
-    },
-    {
-      "id": "bdb8",
-      "name": "Milk",
-      "price": 3.49,
-      "description": "Whole milk, pasteurized and vitamin D fortified.",
-      "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWlsa3xlbnwwfHwwfHx8Mg%3D%3D",
-      "quantity": 6,
-      "unit": "gallon"
+      "id": "2039",
+      "name": "Anmol",
+      "email": "An@gmail.com",
+      "password": "1234567890"
     }
   ],
   "product": {
