@@ -55,14 +55,27 @@
       "link": "#"
     }
   ],
-  "cartItem": [
-   
+  "cartItem": [],
+  "profile": [
+    {
+      "id": "1",
+      "name": "example",
+      "email": "example@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "5ac0",
+      "name": "Achyut",
+      "email": "a@g.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "2039",
+      "name": "Anmol",
+      "email": "An@gmail.com",
+      "password": "1234567890"
+    }
   ],
-
-   "profile":[
-         
-   ],
-
   "product": {
     "Fruits": [
       {

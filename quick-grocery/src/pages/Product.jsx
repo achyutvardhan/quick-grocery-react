@@ -32,9 +32,7 @@ export default function Product() {
               </li>
             </ul>
           </div>
-          <div className="product-grid">
-            <OutletProduct />
-          </div>
+          <div className="product-grid">{<OutletProduct />}</div>
         </div>
       </section>
     </>

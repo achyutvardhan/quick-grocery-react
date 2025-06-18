@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import styles from "../css/signup.module.css"; // Import the new CSS module
-import { Link } from "react-router";
+import styles from "../css/signup.module.css"; // 
+import { Link , useNavigate } from "react-router";
+import { SignUp } from "../js/ProfileFetch";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -10,6 +11,7 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +26,15 @@ export default function Signup() {
     setError("");
     // Handle signup logic here
     console.log("Name:", name, "Email:", email, "Password:", password);
+    const createProfile = async() =>{
+      const res = await  SignUp(name , email,password);
+      if(res?.status){
+        navigate("/Login");
+      }else{
+        setError(`${res?.message}`);
+      }
+    }
+    createProfile()
   };
 
   return (
