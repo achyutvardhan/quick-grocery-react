@@ -10,12 +10,16 @@ export default function OutletProduct() {
   const Meat = data.Meat || [];
   const Dairy = data.Dairy || [];
   const isLoading = !data.Fruits;
+
   const All = [
-    ...Fruits.slice(0, 2),
-    ...Vegetables.slice(0, 2),
-    ...Bakery.slice(0, 2),
-    ...Meat.slice(0, 1),
-    ...Dairy.slice(0, 1),
+    ...Fruits.slice(0, 2).map((item) => ({ ...item, category: "Fruits" })),
+    ...Vegetables.slice(0, 2).map((item) => ({
+      ...item,
+      category: "Vegetables",
+    })),
+    ...Bakery.slice(0, 2).map((item) => ({ ...item, category: "Bakery" })),
+    ...Meat.slice(0, 1).map((item) => ({ ...item, category: "Meat" })),
+    ...Dairy.slice(0, 1).map((item) => ({ ...item, category: "Dairy" })),
   ];
   const [category, setCategory] = useState({
     category: "All",
@@ -37,12 +41,11 @@ export default function OutletProduct() {
       else setCategory({ data: All, category: "All" });
     };
     getCategory();
-  }, [currentLocation]);
+  }, [currentLocation, Fruits, Vegetables, Bakery, Meat, Dairy]);
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  //   console.log(currentLocation);
-  // console.log(Fruits)
   return (
     <>
       {category.data.map((Data, index) => {
