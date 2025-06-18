@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, {  useState, useContext  } from "react";
+import { useNavigate } from "react-router";
 import styles from "../css/login.module.css";
 import { Link } from "react-router";
 import { LoginFetch } from "../js/ProfileFetch";
@@ -12,6 +13,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const { login } = useContext(AuthContext);
   const { setProfile } = useContext(ProfileContext);
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email || !password) {
@@ -26,6 +28,7 @@ export default function Login() {
         const profile = result?.data;
         login();
         setProfile(profile);
+        navigate("/")
       } else {
         setError(`${result.message}`);
       }

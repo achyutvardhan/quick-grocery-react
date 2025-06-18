@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-
+import { ProfileContext } from "../context/ProfileContext";
+import { AuthContext } from "../context/AuthContext";
+import ProfileDropdown from "../components/ProfileDropdown";
 export default function Header() {
+  const { profile } = useContext(ProfileContext);
+  const { loggedIn } = useContext(AuthContext);
   return (
     <header className="site-header">
       <div className="container">
@@ -31,7 +35,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                to={`/AddToCart/${1}`}
+                to={`/AddToCart/${profile?.id}`}
                 style={{
                   color: "#218c4a",
                   textDecoration: "none",
@@ -58,21 +62,33 @@ export default function Header() {
                 </span>
               </Link>
             </li>
-            <li>
-              <Link
-                to="/Login"
-                className="auth-icon-link"
-                style={{
-                  color: "#fff",
-                  background: "#218c4a",
-                  padding: "8px 16px",
-                  borderRadius: "6px",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                <span>Login/Signup</span>
-              </Link>
+            <li style={{ position: "relative" }}>
+              {loggedIn ? (
+                <div
+                  style={{
+                    background: "#f0fff4",
+                    borderRadius: "50%",
+                    padding: "2px",
+                  }}
+                >
+                  <ProfileDropdown profile={profile} />
+                </div>
+              ) : (
+                <Link
+                  to="/Login"
+                  className="auth-icon-link"
+                  style={{
+                    color: "#fff",
+                    background: "#218c4a",
+                    padding: "8px 16px",
+                    borderRadius: "6px",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <span>Login/Signup</span>
+                </Link>
+              )}
             </li>
           </ul>
         </nav>
