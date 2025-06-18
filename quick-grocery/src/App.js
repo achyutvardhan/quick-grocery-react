@@ -12,6 +12,7 @@ import Signup from "./Auth/Signup";
 import Cart from "./components/Cart";
 import NoPage from "./pages/NoPage";
 import ViewItem from "./components/ViewItem";
+import Profile from "./pages/Profile";
 import { useEffect, useContext } from "react";
 import { DataContext } from "./context/DataContext";
 import { productFetch } from "./js/productFetch";
@@ -23,7 +24,7 @@ function App() {
       responseHandler(data);
     };
     fetchData();
-  },[]);
+  }, []);
 
   return (
     <>
@@ -34,6 +35,7 @@ function App() {
             <Route path="Signup" element={<Signup />} />
             <Route element={<PrivateRoute />}>
               <Route path="/AddToCart/:userId" element={<Cart />} />
+              <Route path="/profile/:userId" element={<Profile />} />
             </Route>
             <Route path="/ViewItem/:category/:name" element={<ViewItem />} />
             <Route index element={<Home />} />

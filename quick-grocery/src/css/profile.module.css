@@ -1,0 +1,85 @@
+.profileContainer {
+  min-height: 100vh;
+  background: #f0fff4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(56, 161, 105, 0.08);
+  padding: 2.5rem 2rem;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.avatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  background: #e6fffa;
+  border-radius: 50%;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2f855a;
+  margin: 0.5rem 0 0 0;
+}
+
+.email {
+  color: #4a5568;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.infoSection {
+  width: 100%;
+}
+
+.infoSection h3 {
+  color: #38a169;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #2f855a;
+  font-size: 1rem;
+}
+
+.infoList li {
+  margin-bottom: 0.75rem;
+  background: #f0fff4;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(56, 161, 105, 0.04);
+}
+
+.loading {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #38a169;
+}
