@@ -36,14 +36,17 @@ export default function Header() {
             <li>
               <Link
                 to={`/AddToCart/${profile?.id}`}
+                className="cart-link"
                 style={{
-                  color: "#218c4a",
-                  textDecoration: "none",
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
                   padding: "8px 16px",
                   borderRadius: "6px",
+                  background: "#f5f5f5",
+                  color: "#218c4a",
+                  textDecoration: "none",
+                  fontWeight: "bold",
                 }}
               >
                 <FontAwesomeIcon icon={faCartShopping} size="lg" />
@@ -66,11 +69,25 @@ export default function Header() {
               {loggedIn ? (
                 <div
                   style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.75rem",
                     background: "#f0fff4",
-                    borderRadius: "50%",
-                    padding: "2px",
+                    borderRadius: "2rem",
+                    padding: "0.25rem 1rem",
+                    boxShadow: "0 2px 8px rgba(56,161,105,0.08)",
                   }}
                 >
+                  <span
+                    style={{
+                      fontWeight: 600,
+                      color: "#218c4a",
+                      fontSize: "1.05rem",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    Hi, {profile?.name || "User"}
+                  </span>
                   <ProfileDropdown profile={profile} />
                 </div>
               ) : (
@@ -86,7 +103,7 @@ export default function Header() {
                     fontWeight: "bold",
                   }}
                 >
-                  <span>Login/Signup</span>
+                  Login/Signup
                 </Link>
               )}
             </li>

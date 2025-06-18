@@ -12,7 +12,7 @@ const LoginFetch = async (email, password) => {
       else return { status: false, message: "wrong password" };
     } else return { status: false, message: "Profile Not found" };
   } catch (error) {
-    return { status: false, message: "server Error" };
+    return { status: false, message: "User not Found" };
   }
 };
 
