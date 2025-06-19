@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import BlogSection from "../components/BlogSection";
 
-export default function Blog() {
+const Blog = () => {
   return (
     <div>
-      
+      <BlogSection />
     </div>
-  )
-}
+  );
+};
+
+export default Blog;
