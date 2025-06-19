@@ -1,4 +1,5 @@
 import styles from "../css/footer.module.css";
+import { Link } from "react-router";
 function Footer() {
   return (
     <footer className={styles["site-footer"]}>
@@ -27,11 +28,11 @@ function Footer() {
           <div className={styles["footer-column"]}>
             <h4>Shop</h4>
             <ul className={styles["icon-list"]}>
-              <li><a href="#"><i className="fas fa-apple-alt"></i> Fresh Produce</a></li>
-              <li><a href="#"><i className="fas fa-cheese"></i> Dairy & Eggs</a></li>
-              <li><a href="#"><i className="fas fa-bread-slice"></i> Bakery</a></li>
-              <li><a href="#"><i className="fas fa-drumstick-bite"></i> Meat & Seafood</a></li>
-              <li><a href="#"><i className="fas fa-shopping-bag"></i> All Products</a></li>
+              <li><Link to={"/ourProduct/Fruits"}><i className="fas fa-apple-alt"></i> Fruits</Link></li>
+              <li><Link to={"/ourProduct/Dairy"}><i className="fas fa-cheese"></i> Dairy & Eggs</Link></li>
+              <li><Link to={"/ourProduct/Bakery"}><i className="fas fa-bread-slice"></i> Bakery</Link></li>
+              <li><Link to={"/ourProduct/Meat"}><i className="fas fa-drumstick-bite"></i> Meat & Seafood</Link></li>
+              <li><Link to={"/ourProduct"}><i className="fas fa-shopping-bag"></i> All Products</Link></li>
             </ul>
           </div>
 
@@ -39,7 +40,7 @@ function Footer() {
           <div className={styles["footer-column"]}>
             <h4>Customer Service</h4>
             <ul>
-              <li><a href="#">Contact Us</a></li>
+              <li><Link to={"/Contact"}>Contact Us</Link></li>
               <li><a href="#">FAQs</a></li>
               <li><a href="#">Shipping Policy</a></li>
               <li><a href="#">Return Policy</a></li>
