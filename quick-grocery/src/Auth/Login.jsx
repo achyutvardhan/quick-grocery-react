@@ -30,11 +30,11 @@ export default function Login() {
         const profile = result?.data;
         login();
         setProfile(profile);
-        refreshFetch();
         navigate("/");
       } else {
         setError(`${result.message}`);
       }
+      // refreshFetch();
     };
     checkProfile();
   };

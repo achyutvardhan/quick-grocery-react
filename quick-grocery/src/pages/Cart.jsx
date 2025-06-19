@@ -5,8 +5,12 @@ import { CartContext } from "../context/CartContext";
 
 
 export default function AddToCart() {
-  const {cartItem } = useContext(CartContext);
- console.log(cartItem)
+  const {cartItem , refreshFetch ,noOfItems , totalSum  } = useContext(CartContext);
+  useEffect(() => {
+    refreshFetch();
+  }, []);
+ const items = cartItem?.items;
+ console.log(items)
   return (
     <>
       <div className="cp-wrapper">
@@ -15,9 +19,9 @@ export default function AddToCart() {
             <h2>Order Summary</h2>
             <div className="cp-summary-row">
               <span>
-                Items (<span id="cpCount">2</span>)
+                Items (<span id="cpCount">{noOfItems()}</span>)
               </span>
-              <span id="cpSub">$223232</span>
+              <span id="cpSub">${totalSum()}</span>
             </div>
             <div className="cp-summary-row">
               <span>Delivery</span>
@@ -25,12 +29,12 @@ export default function AddToCart() {
             </div>
             <div className="cp-summary-row cp-total">
               <span>Total</span>
-              <span id="cpGrand">$23334</span>
+              <span id="cpGrand">${totalSum() + 3.5}</span>
             </div>
             <button className="cp-btn">Proceed to Buy</button>
           </aside>
           <section className="cp-items" id="cpItemList">
-            {cartItem?.map((data,index)=> {return <CartCard  data={data} key={index} />})}
+            {items?.map((data,index)=> {return <CartCard  data={data} key={index} />})}
           </section>
         </div>
       </div>

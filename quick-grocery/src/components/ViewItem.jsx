@@ -1,21 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { DataContext } from "../context/DataContext";
 import { CartContext } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
+import { postFromViewItem } from "../js/cartFetch";
+import { ProfileContext } from "../context/ProfileContext";
+
 export default function ViewItem() {
   const { data } = useContext(DataContext);
-  const {refreshFetch} = useContext(CartContext)
-  const {loggedIn} = useContext(AuthContext)
+  const { refreshFetch } = useContext(CartContext);
+  const { loggedIn } = useContext(AuthContext);
+  const { profile } = useContext(ProfileContext);
   const location = useLocation();
+  const navigate = useNavigate();
   const pathParts = location.pathname.split("/");
   const category = pathParts[2];
   const item = pathParts[3];
   const currentCategoryData = data[category] || [];
   const currentItem = currentCategoryData.find((x) => x.name === item);
   const [cart, setCart] = useState(1);
-
   const [select, setSelect] = useState("");
+
   useEffect(() => {
     if (currentItem?.images?.[0]) setSelect(currentItem.images[0]);
   }, [currentItem]);
@@ -25,11 +30,28 @@ export default function ViewItem() {
   }
 
   const onclickHandler = (val) => setSelect(val);
-  const addToCartHandler = ()=>{
-      {loggedIn && refreshFetch()}
-
-  }
-
+  const addToCartHandler = async () => {
+    try {
+      if (loggedIn) {
+        console.log(currentItem);
+        const dataItem = {
+          name : currentItem?.name,
+          quantity : cart,
+          price : currentItem?.price,
+          unit : currentItem?.unit,
+          image : currentItem?.images[0]
+        } 
+        const res = await postFromViewItem(profile.id, dataItem);
+        console.log(res);
+        refreshFetch();
+        
+      } else {
+        navigate("/Login");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -43,7 +65,7 @@ export default function ViewItem() {
           <div className="product-detail">
             <div className="product-gallery">
               <div className="main-image">
-                <img src={select} alt={currentItem.name} />
+                <img src={select || null} alt={currentItem.name} />
               </div>
               <div className="thumbnail-images">
                 {currentItem.images?.map((src, index) => (
@@ -83,8 +105,15 @@ export default function ViewItem() {
                     <button
                       className="qty-btn"
                       onClick={() => cart >= 2 && setCart((prev) => prev - 1)}
-                    > -</button>
-                    <input type="text" value={cart} className="qty-input" />
+                    >
+                      -
+                    </button>
+                    <input
+                      type="text"
+                      value={cart}
+                      className="qty-input"
+                      onChange={(e) => setCart(e.target.value)}
+                    />
                     <button
                       className="qty-btn"
                       onClick={() => setCart((prev) => prev + 1)}
@@ -95,7 +124,9 @@ export default function ViewItem() {
                   <span className="stock">In Stock</span>
                 </div>
                 <div className="product-actions">
-                  <button className="btn btn-large" onClick={addToCartHandler}  >Add to Cart</button>
+                  <button className="btn btn-large" onClick={addToCartHandler}>
+                    Add to Cart
+                  </button>
                   <button className="wishlist-btn">❤</button>
                 </div>
               </div>
