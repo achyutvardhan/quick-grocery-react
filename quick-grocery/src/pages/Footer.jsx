@@ -1,4 +1,5 @@
 import styles from "../css/footer.module.css";
+import { Link } from "react-router";
 function Footer() {
   return (
     <footer className={styles["site-footer"]}>
