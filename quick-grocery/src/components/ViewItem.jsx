@@ -1,8 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { DataContext } from "../context/DataContext";
+import { CartContext } from "../context/CartContext";
+import { AuthContext } from "../context/AuthContext";
 export default function ViewItem() {
   const { data } = useContext(DataContext);
+  const {refreshFetch} = useContext(CartContext)
+  const {loggedIn} = useContext(AuthContext)
   const location = useLocation();
   const pathParts = location.pathname.split("/");
   const category = pathParts[2];
@@ -21,6 +25,11 @@ export default function ViewItem() {
   }
 
   const onclickHandler = (val) => setSelect(val);
+  const addToCartHandler = ()=>{
+      {loggedIn && refreshFetch()}
+
+  }
+
 
   return (
     <>
@@ -74,9 +83,7 @@ export default function ViewItem() {
                     <button
                       className="qty-btn"
                       onClick={() => cart >= 2 && setCart((prev) => prev - 1)}
-                    >
-                      -
-                    </button>
+                    > -</button>
                     <input type="text" value={cart} className="qty-input" />
                     <button
                       className="qty-btn"
@@ -88,7 +95,7 @@ export default function ViewItem() {
                   <span className="stock">In Stock</span>
                 </div>
                 <div className="product-actions">
-                  <button className="btn btn-large"  >Add to Cart</button>
+                  <button className="btn btn-large" onClick={addToCartHandler}  >Add to Cart</button>
                   <button className="wishlist-btn">❤</button>
                 </div>
               </div>

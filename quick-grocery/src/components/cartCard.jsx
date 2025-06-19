@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function cartCard() {
+const CartCard = () => {
   return (
     <>
       <article className="cp-card" data-price="2.49">
@@ -26,4 +26,6 @@ export default function cartCard() {
       </article>
     </>
   );
-}
+};
+
+export default CartCard;
