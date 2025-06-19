@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import BlogCard from "./BlogCard";
-import blogData from "../json/db.json"; // Adjust the path if needed
 
 const BlogSection = () => {
-  const blogs = blogData.blog; // Access the array inside the JSON
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/blog") // Change this URL to your API endpoint
+      .then((response) => {
+        setBlogs(response.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError("Failed to fetch blogs");
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <div>Loading blogs...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <section className="blog-section">
