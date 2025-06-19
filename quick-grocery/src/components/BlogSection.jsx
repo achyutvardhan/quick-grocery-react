@@ -9,7 +9,7 @@ const BlogSection = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/blog") // Change this URL to your API endpoint
+      .get("http://localhost:3000/blog") // Change this URL to your API endpoint
       .then((response) => {
         setBlogs(response.data);
         setLoading(false);
