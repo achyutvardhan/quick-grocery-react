@@ -9,7 +9,7 @@ import SpecialOffer from "./pages/SpecialOffer";
 import Login from "./Auth/Login";
 import PrivateRoute from "./Auth/PrivateRoute";
 import Signup from "./Auth/Signup";
-import Cart from "./components/Cart";
+import Cart from "./pages/Cart";
 import NoPage from "./pages/NoPage";
 import ViewItem from "./components/ViewItem";
 import Profile from "./pages/Profile";

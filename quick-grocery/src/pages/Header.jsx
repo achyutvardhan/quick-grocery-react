@@ -4,10 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { ProfileContext } from "../context/ProfileContext";
 import { AuthContext } from "../context/AuthContext";
+import { CartContext } from "../context/CartContext";
 import ProfileDropdown from "../components/ProfileDropdown";
 export default function Header() {
   const { profile } = useContext(ProfileContext);
   const { loggedIn } = useContext(AuthContext);
+  const { noOfItems } = useContext(CartContext);
   return (
     <header className="site-header">
       <div className="container">
@@ -67,7 +69,7 @@ export default function Header() {
                     marginLeft: "2px",
                   }}
                 >
-                  0
+                  {loggedIn ? noOfItems() : 0}
                 </span>
               </Link>
             </li>

@@ -84,6 +84,35 @@
 
   ],
   "cartItem": [],
+  "cartItems": [
+    {
+      "id": "bd9f",
+      "userId": "5ac0",
+      "items": [
+        {
+          "name": "Apple",
+          "quantity": 19,
+          "price": 0.99,
+          "unit": "each",
+          "image": "https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg"
+        },
+        {
+          "name": "Banana",
+          "quantity": 12,
+          "price": 0.59,
+          "unit": "each",
+          "image": "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350"
+        },
+        {
+          "name": "Bread",
+          "quantity": 10,
+          "price": 2.49,
+          "unit": "loaf",
+          "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJlYWR8ZW58MHx8MHx8fDI%3D"
+        }
+      ]
+    }
+  ],
   "profile": [
     {
       "id": "1",

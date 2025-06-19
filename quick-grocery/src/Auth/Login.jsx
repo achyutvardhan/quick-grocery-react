@@ -1,10 +1,11 @@
-import React, {  useState, useContext  } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import styles from "../css/login.module.css";
 import { Link } from "react-router";
 import { LoginFetch } from "../js/ProfileFetch";
 import { AuthContext } from "../context/AuthContext";
 import { ProfileContext } from "../context/ProfileContext";
+import { CartContext } from "../context/CartContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -13,6 +14,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const { login } = useContext(AuthContext);
   const { setProfile } = useContext(ProfileContext);
+  const { refreshFetch } = useContext(CartContext);
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,10 +30,11 @@ export default function Login() {
         const profile = result?.data;
         login();
         setProfile(profile);
-        navigate("/")
+        navigate("/");
       } else {
         setError(`${result.message}`);
       }
+      // refreshFetch();
     };
     checkProfile();
   };
