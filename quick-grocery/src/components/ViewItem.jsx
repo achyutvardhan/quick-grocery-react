@@ -9,13 +9,12 @@ export default function ViewItem() {
   const item = pathParts[3];
   const currentCategoryData = data[category] || [];
   const currentItem = currentCategoryData.find((x) => x.name === item);
+  const [cart, setCart] = useState(1);
 
-  
   const [select, setSelect] = useState("");
   useEffect(() => {
     if (currentItem?.images?.[0]) setSelect(currentItem.images[0]);
   }, [currentItem]);
-
 
   if (!data[category] || !currentItem) {
     return <div>Loading...</div>;
@@ -28,7 +27,8 @@ export default function ViewItem() {
       <section className="product-page">
         <div className="container">
           <div className="breadcrumb">
-            <Link to={"/"}>Home</Link> &gt; <Link to={`/ourProduct/${category}`}>{category}</Link> &gt;{" "}
+            <Link to={"/"}>Home</Link> &gt;{" "}
+            <Link to={`/ourProduct/${category}`}>{category}</Link> &gt;{" "}
             <span>{item}</span>
           </div>
           <div className="product-detail">
@@ -71,14 +71,24 @@ export default function ViewItem() {
                 <div className="quantity">
                   <label>Quantity:</label>
                   <div className="quantity-selector">
-                    <button className="qty-btn">-</button>
-                    <input type="text" defaultValue={1} className="qty-input" />
-                    <button className="qty-btn">+</button>
+                    <button
+                      className="qty-btn"
+                      onClick={() => cart >= 2 && setCart((prev) => prev - 1)}
+                    >
+                      -
+                    </button>
+                    <input type="text" value={cart} className="qty-input" />
+                    <button
+                      className="qty-btn"
+                      onClick={() => setCart((prev) => prev + 1)}
+                    >
+                      +
+                    </button>
                   </div>
                   <span className="stock">In Stock</span>
                 </div>
                 <div className="product-actions">
-                  <button className="btn btn-large">Add to Cart</button>
+                  <button className="btn btn-large"  >Add to Cart</button>
                   <button className="wishlist-btn">❤</button>
                 </div>
               </div>
