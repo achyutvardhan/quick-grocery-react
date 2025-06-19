@@ -1,6 +1,5 @@
 import React , {useContext, useEffect} from 'react'
 import { CartContext } from '../context/CartContext'
-import React from 'react'
 import HeroBanner from '../Home/HeroBanner'
 import TopCategory from '../Home/TopCategory'
 // import OurProductsSection from  '../Home/OurProductSection'
