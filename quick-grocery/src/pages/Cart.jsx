@@ -1,5 +1,5 @@
 import React , {useContext, useEffect, useState} from "react";
-import CartCard from "../components/CartCard";
+import CartItemCard from "../components/CartItemCard";
 import { CartContext } from "../context/CartContext";
 
 
@@ -34,7 +34,7 @@ export default function AddToCart() {
             <button className="cp-btn">Proceed to Buy</button>
           </aside>
           <section className="cp-items" id="cpItemList">
-            {items?.map((data,index)=> {return <CartCard  data={data} key={index} />})}
+            {items?.map((data,index)=> {return <CartItemCard  data={data} key={index} />})}
           </section>
         </div>
       </div>

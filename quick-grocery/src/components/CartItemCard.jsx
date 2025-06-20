@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { postFromAddToCart } from "../js/cartFetch";
 import { ProfileContext } from "../context/ProfileContext";
 import { CartContext } from "../context/CartContext";
-const CartCard = ({ data }) => {
+const CartItemCard = ({ data }) => {
   //issue to addres the + -  button
   const [cart, setCart] = useState(data.quantity);
   const { profile } = useContext(ProfileContext);
@@ -60,4 +60,4 @@ const CartCard = ({ data }) => {
   );
 };
 
-export default CartCard;
+export default CartItemCard;
