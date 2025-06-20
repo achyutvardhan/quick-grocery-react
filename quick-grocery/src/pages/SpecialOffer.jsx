@@ -10,16 +10,7 @@ const SpecialOffer = () => {
 
   useEffect(() => {
 
-    // axios
-    //   .get('http://localhost:3000/product')
-    //   .then(response => {
-    //     setFruits(response.data.Fruits); // Access the Fruits array
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     setError('Failed to fetch fruits');
-    //     setLoading(false);
-    //   });
+ 
     const getFruits  = async () =>{
       try{
         const data = await productFetch();
