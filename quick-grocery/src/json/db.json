@@ -82,7 +82,6 @@
       "category": "Raw Meat"
     }
   ],
-  "cartItem": [],
   "cartItems": [
     {
       "id": "bd9f",
@@ -97,21 +96,22 @@
         },
         {
           "name": "Banana",
-          "quantity": 12,
+          "quantity": 14,
           "price": 0.59,
           "unit": "each",
           "image": "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350"
         },
         {
-          "name": "Bread",
-          "quantity": 10,
-          "price": 2.49,
-          "unit": "loaf",
-          "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJlYWR8ZW58MHx8MHx8fDI%3D"
+          "name": "Bacon",
+          "quantity": 9,
+          "price": 4.49,
+          "unit": "pack",
+          "image": "https://images.unsplash.com/photo-1694983361629-0363ab0d1b49?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
       ]
     }
   ],
+  "orders":[],
   "profile": [
     {
       "id": "1",

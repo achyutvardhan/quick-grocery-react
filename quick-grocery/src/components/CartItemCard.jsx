@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { postFromAddToCart } from "../js/cartFetch";
+import { deleteFromAddTCart, postFromAddToCart } from "../js/cartFetch";
 import { ProfileContext } from "../context/ProfileContext";
 import { CartContext } from "../context/CartContext";
 const CartItemCard = ({ data }) => {
@@ -24,6 +24,13 @@ const CartItemCard = ({ data }) => {
     const res = await postFromAddToCart(data, profile.id);
     console.log(res);
   };
+  
+  const onDeleteHandler = async()=>{
+    const res = await deleteFromAddTCart(data,profile.id);
+    console.log(res)
+    refreshFetch();
+  }
+
   return (
     <>
       <article className="cp-card" data-price="2.49">
@@ -49,7 +56,7 @@ const CartItemCard = ({ data }) => {
                 +
               </button>
             </div>
-            <span className="cp-remove">Remove</span>
+            <span className="cp-remove" onClick={onDeleteHandler} >Remove</span>
           </div>
           <div className="cp-subtotal">
             Subtotal: <span>${Math.round(data.price * cart)}</span>

@@ -1,0 +1,269 @@
+.ordersContainer {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0ffe7 0%, #bbf7d0 40%, #d9f99d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+  width: 100vw;
+  min-width: 100vw;
+  box-sizing: border-box;
+}
+
+.ordersGlass {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  box-shadow: 0 8px 40px 0 rgba(34, 197, 94, 0.13),
+    0 1.5px 8px 0 rgba(0, 0, 0, 0.04);
+  border: 2px solid rgba(187, 247, 208, 0.18);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  padding: 2.5rem 2.2rem;
+  max-width: 80vw;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ordersTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #15803d;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px #bbf7d088;
+}
+
+.ordersList {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.orderItem {
+  background: rgba(240, 255, 244, 0.85);
+  border-radius: 14px;
+  box-shadow: 0 1px 8px rgba(34, 197, 94, 0.06);
+  border: 1.5px solid #bbf7d0;
+  padding: 1.1rem 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #166534;
+  font-size: 1.08rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.orderItem:last-child {
+  margin-bottom: 0;
+}
+
+.orderEmpty {
+  color: #aaa;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.ordersTableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.ordersTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(34, 197, 94, 0.1),
+    0 1.5px 8px 0 rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.ordersTable th,
+.ordersTable td {
+  padding: 1.1rem 1.2rem;
+  text-align: left;
+  font-size: 1.05rem;
+  color: #166534;
+  border-bottom: 1.5px solid #bbf7d0;
+}
+
+.ordersTable th {
+  background: rgba(187, 247, 208, 0.25);
+  font-weight: 700;
+  color: #15803d;
+  letter-spacing: 0.5px;
+}
+
+.ordersTable tr:last-child td {
+  border-bottom: none;
+}
+
+.orderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.orderRow:hover {
+  background: rgba(217, 249, 157, 0.18);
+}
+
+.orderDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.orderActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cancelBtn {
+  background: linear-gradient(90deg, #fef9c3 0%, #fca5a5 100%);
+  color: #b91c1c;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(252, 165, 165, 0.08);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.cancelBtn:hover {
+  background: linear-gradient(90deg, #fde68a 0%, #f87171 100%);
+  box-shadow: 0 4px 16px rgba(252, 165, 165, 0.16);
+}
+
+.orderHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.7rem;
+}
+
+.orderHeaderLeft {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.orderId {
+  font-weight: 700;
+  color: #166534;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.orderDate {
+  color: #6ee7b7;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.orderHeaderRight {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.orderBodyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2rem;
+}
+
+.orderItemsBox {
+  flex: 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.itemsLabel {
+  font-weight: 600;
+  color: #15803d;
+  margin-right: 0.5rem;
+}
+
+.itemsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.itemName {
+  font-weight: 500;
+  color: #166534;
+}
+
+.itemQty {
+  color: #22c55e;
+  font-weight: 600;
+  margin-left: 0.3rem;
+}
+
+.orderTotalBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 0.2rem;
+}
+
+.totalLabel {
+  color: #15803d;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.totalValue {
+  color: #166534;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.statusDelivered {
+  background: #bbf7d0;
+  color: #15803d;
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 700;
+}
+
+.statusShipped {
+  background: #d9f99d;
+  color: #166534;
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 700;
+}
+
+.statusCancelled {
+  background: #fca5a5;
+  color: #991b1b;
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 700;
+}

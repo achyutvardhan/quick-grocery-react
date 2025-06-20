@@ -67,3 +67,23 @@ export const postFromAddToCart = async(data, userId)=>{
         return false;
     }
 }
+
+export const deleteFromAddTCart = async(data , userId)=>{
+  try {
+    const response = await axios.get(`http://localhost:3000/cartItems?userId=${userId}`);
+    const items = response?.data[0].items;
+    console.log(data)
+    const found = items.find(x=> x.name  == data.name);
+    if(!found) {
+      console.log("server Error !! product not found");
+      return false;
+    }
+    const newItems = items.filter(x => x.name !== data.name);
+    await axios.patch(`http://localhost:3000/cartItems/${response.data[0].id}`, { items: newItems });
+    return {items: newItems};
+
+  } catch (error) {
+     console.log(error)
+        return false;
+  }
+}
