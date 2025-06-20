@@ -3,6 +3,10 @@ import { CartContext } from '../context/CartContext'
 import HeroBanner from '../Home/HeroBanner'
 import TopCategory from '../Home/TopCategory'
 import { AuthContext } from '../context/AuthContext'
+import YouMayAlsoLike from '../Home/YouMayAlsoLike'
+import OurProductSection from '../Home/OurProductSection'
+import AppPromotionSection from '../Home/AppPromotionSection'
+import FoodBlogSection from '../Home/FoodBlogSection'
 // import OurProductsSection from  '../Home/OurProductSection'
 // import FoodBlogSection from '../Home/FoodBlogSection'
 
@@ -16,6 +20,11 @@ export default function Home() {
     <>
     <HeroBanner/>
     <TopCategory/>
+    <OurProductSection/>
+     <AppPromotionSection/>
+     <FoodBlogSection/>
+    <YouMayAlsoLike/>
+
    
    </>
   )

@@ -860,6 +860,9 @@ nav ul li a:hover .fa-shopping-cart {
   font-size: 1.6rem;
   color: #22c55e;
 }
+.you-may{
+  text-align: center;
+}
 
 /* Blog Section */
 .blog-section {
