@@ -55,35 +55,63 @@
       "link": "#"
     }
   ],
-  "topCategory":[
+  "topCategory": [
     {
-      "id":"1",
-      "image":"https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "category":"fruits"
+      "id": "1",
+      "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "category": "fruits"
     },
-      {
-      "id":"2",
-      "image":"https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "category":"Vegetables"
+    {
+      "id": "2",
+      "image": "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "category": "Vegetables"
     },
-      {
-      "id":"3",
-      "image":"https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "category":"Bakery"
+    {
+      "id": "3",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "category": "Bakery"
     },
-      {
-      "id":"4",
-      "image":"https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category":"Dairy"
+    {
+      "id": "4",
+      "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Dairy"
     },
-      {
-      "id":"5",
-      "image":"https://plus.unsplash.com/premium_photo-1726138640100-37e644d59628?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmF3JTIwbWVhdHxlbnwwfHwwfHx8MA%3D%3D",
-      "category":"Raw Meat"
+    {
+      "id": "5",
+      "image": "https://plus.unsplash.com/premium_photo-1726138640100-37e644d59628?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmF3JTIwbWVhdHxlbnwwfHwwfHx8MA%3D%3D",
+      "category": "Raw Meat"
     }
-
   ],
   "cartItem": [],
+  "cartItems": [
+    {
+      "id": "bd9f",
+      "userId": "5ac0",
+      "items": [
+        {
+          "name": "Apple",
+          "quantity": 22,
+          "price": 0.99,
+          "unit": "each",
+          "image": "https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg"
+        },
+        {
+          "name": "Banana",
+          "quantity": 12,
+          "price": 0.59,
+          "unit": "each",
+          "image": "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350"
+        },
+        {
+          "name": "Bread",
+          "quantity": 10,
+          "price": 2.49,
+          "unit": "loaf",
+          "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJlYWR8ZW58MHx8MHx8fDI%3D"
+        }
+      ]
+    }
+  ],
   "profile": [
     {
       "id": "1",
