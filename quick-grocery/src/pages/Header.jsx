@@ -13,13 +13,15 @@ export default function Header() {
       <div className="container">
         <div className="logo">
           <h1>QuickGrocery</h1>
-        </div>
-            {/* <div class="search-bar">
-        <form>
+            <div class="search-bar">
+        <form className="search-bar">
           <input type="text" placeholder="Search for products..."/>
           <button type="submit" class="search-btn">Search</button>
         </form>
-      </div> */}
+      </div>
+        </div>
+      
+       
         <nav className="main-nav">
           <ul>
             <li>
