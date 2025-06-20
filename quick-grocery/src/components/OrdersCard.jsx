@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../css/orders.module.css";
 export default function OrdersCard({ order }) {
-  console.log(order);
+//   console.log(order);
+const formatDate = (dateStr) => {
+    const dateObj = new Date(dateStr);
+    const mm = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const dd = String(dateObj.getDate()).padStart(2, "0");
+    const yyyy = dateObj.getFullYear();
+    return `${mm}-${dd}-${yyyy}`;
+};
+
   return (
     <>
       <li className={styles.orderItem} key={order.id}>
         <div className={styles.orderHeaderRow}>
           <div className={styles.orderHeaderLeft}>
             <span className={styles.orderId}>#{order.id}</span>
-            <span className={styles.orderDate}>{order.date}</span>
+            <span className={styles.orderDate}>{formatDate(order?.date)}</span>
           </div>
           <div className={styles.orderHeaderRight}>
             <span
@@ -31,21 +39,17 @@ export default function OrdersCard({ order }) {
           <div className={styles.orderItemsBox}>
             <span className={styles.itemsLabel}>Items:</span>
             <ul className={styles.itemsList}>
-              {/* {order.items.map((item, idx) =>
-                item?.map((products, idx) => {
-                  products?.map((itemCart, i) => {
-                      <li key={i}>
-                        <span className={styles.itemName}>{itemCart.name}</span>
-                        <span className={styles.itemQty}>x{itemCart.qty}</span>
-                      </li>
-                  });
-                })
-              )} */}
+              {order?.products.map((item, idx) => {
+                 return(   <li key={idx}>
+                  <span className={styles.itemName}>{item.name}</span>
+                  <span className={styles.itemQty}>x{item.quantity}</span>
+                 </li>  
+                ) })}
             </ul>
           </div>
           <div className={styles.orderTotalBox}>
             <span className={styles.totalLabel}>Total:</span>
-            <span className={styles.totalValue}>${}</span>
+            <span className={styles.totalValue}>${Math.round(order.total)}</span>
           </div>
         </div>
       </li>

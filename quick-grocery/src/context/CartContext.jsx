@@ -26,12 +26,12 @@ const CartProvider = ({ children }) => {
 
   const refreshFetch = async () => {
     const res = await cartFetch(profile.id);
-    console.log(res)
+    // console.log(res)
     setCartItem(res[0]);
     noOfItems();
     totalSum();
-    console.log(res[0]);
-    console.log("called refreshCart");
+    // console.log(res[0]);
+    // console.log("called refreshCart");
   };
   return (
     <CartContext.Provider value={{ cartItem, refreshFetch, noOfItems , totalSum }}>

@@ -7,14 +7,14 @@ function FoodBlogSection() {
     useEffect(()=>{
         const fetchBlog = async() =>{
             const res = await axios.get("http://localhost:3000/blog");
-            console.log(res)
+            // console.log(res)
             const items = res.data?.slice(0, 3)
-            console.log(items)
+            // console.log(items)
             setBlog(items)
         }
         fetchBlog()
     },[])
-    console.log(blog)
+    // console.log(blog)
   return (
     <>
     <section className="blog-section">

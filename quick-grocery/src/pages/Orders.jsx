@@ -4,6 +4,7 @@ import OrdersCard from "../components/OrdersCard";
 import { OrdersContext } from "../context/OrdersContext";
 export default function Orders() {
   const {orders , refreshOrders} = useContext(OrdersContext)
+  // console.log(orders)
   useEffect(()=>{
     refreshOrders();
   },[])
@@ -15,7 +16,7 @@ export default function Orders() {
           {orders.length === 0 && (
             <div className={styles.orderEmpty}>No orders found.</div>
           )}
-          {orders.map((order ,index) => (
+          {orders?.[0]?.order?.map((order ,index) => (
             <OrdersCard order={order} key={index} />
           ))}
         </ul>

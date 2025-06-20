@@ -10,11 +10,16 @@ const OrdersProvider = ({children})=>{
         const res  = await axios.get(`http://localhost:3000/orders?userId=${profile.id}`);
         setOrders(res.data);
     }
+    const noOfOrders = () => {
+        // console.log(orders?.[0]?.order?.length)
+        return orders?.[0]?.order?.length;
+    }
     const refreshOrders = ()=>{
         fetchOrders();
+        noOfOrders();
     }
     return(
-        <OrdersContext.Provider value={{orders , refreshOrders}}>
+        <OrdersContext.Provider value={{orders , refreshOrders , noOfOrders}}>
             {children}
         </OrdersContext.Provider>
     )

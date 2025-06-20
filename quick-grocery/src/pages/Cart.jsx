@@ -3,12 +3,14 @@ import CartItemCard from "../components/CartItemCard";
 import { CartContext } from "../context/CartContext";
 import { postFromCart } from "../js/orderFetch";
 import { deleteAllItem } from "../js/cartFetch";
+import { OrdersContext } from "../context/OrdersContext";
 
 
 
 export default function AddToCart() {
   const {cartItem , refreshFetch ,noOfItems , totalSum  } = useContext(CartContext);
-  useEffect(() => {
+  const {refreshOrders} = useContext(OrdersContext)
+  useEffect(() => { 
     refreshFetch();
   }, []);
  const items = cartItem?.items;
@@ -23,6 +25,7 @@ export default function AddToCart() {
     const deleteAllItems = await deleteAllItem(cartItem.userId);
     console.log(deleteAllItems)
     refreshFetch();
+    refreshOrders();
  }
   return (
     <>
