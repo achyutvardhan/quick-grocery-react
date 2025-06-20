@@ -16,6 +16,7 @@ import Profile from "./pages/Profile";
 import { useEffect, useContext } from "react";
 import { DataContext } from "./context/DataContext";
 import { productFetch } from "./js/productFetch";
+import Orders from "./pages/Orders";
 function App() {
   const { responseHandler } = useContext(DataContext);
   useEffect(() => {
@@ -36,6 +37,7 @@ function App() {
             <Route element={<PrivateRoute />}>
               <Route path="/AddToCart/:userId" element={<Cart />} />
               <Route path="/profile/:userId" element={<Profile />} />
+              <Route path="/orders/:userId" element={<Orders/>}/>
             </Route>
             <Route path="/ViewItem/:category/:name" element={<ViewItem />} />
             <Route index element={<Home />} />

@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faBagShopping,
+} from "@fortawesome/free-solid-svg-icons";
 import { ProfileContext } from "../context/ProfileContext";
 import { AuthContext } from "../context/AuthContext";
 import { CartContext } from "../context/CartContext";
@@ -15,15 +18,16 @@ export default function Header() {
       <div className="container">
         <div className="logo">
           <h1>QuickGrocery</h1>
-            <div class="search-bar">
-        <form className="search-bar">
-          <input type="text" placeholder="Search for products..."/>
-          <button type="submit" class="search-btn">Search</button>
-        </form>
-      </div>
+          <div class="search-bar">
+            <form className="search-bar">
+              <input type="text" placeholder="Search for products..." />
+              <button type="submit" class="search-btn">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
-      
-       
+
         <nav className="main-nav">
           <ul>
             <li>
@@ -59,7 +63,7 @@ export default function Header() {
                   fontWeight: "bold",
                 }}
               >
-                <FontAwesomeIcon icon={faCartShopping} size="lg" />
+                <FontAwesomeIcon icon={faCartShopping} beat size="lg" />
                 <span
                   className="cart-count"
                   style={{
@@ -72,6 +76,38 @@ export default function Header() {
                   }}
                 >
                   {loggedIn ? noOfItems() : 0}
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={`/orders/${profile?.id}`}
+                className="cart-link"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  padding: "8px 16px",
+                  borderRadius: "6px",
+                  background: "#f5f5f5",
+                  color: "#218c4a",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                <FontAwesomeIcon icon={faBagShopping} bounce size="lg" />
+                <span
+                  className="cart-count"
+                  style={{
+                    background: "#218c4a",
+                    color: "#fff",
+                    borderRadius: "50%",
+                    padding: "2px 8px",
+                    fontSize: "0.85em",
+                    marginLeft: "2px",
+                  }}
+                >
+                  {loggedIn ? 0 : 0}
                 </span>
               </Link>
             </li>

@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import styles from "../css/profile.module.css";
 import { ProfileContext } from "../context/ProfileContext";
+import { CartContext } from "../context/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function Profile() {
   const { profile } = useContext(ProfileContext);
+  const { noOfItems } = useContext(CartContext);
 
   if (!profile) {
     return <div className={styles.loading}>Loading profile...</div>;
@@ -16,8 +18,7 @@ export default function Profile() {
       <div className={styles.profileCard}>
         <div className={styles.avatarSection}>
           <div className={styles.avatar}>
-            <FontAwesomeIcon icon={faUser} style={{ marginRight: "0.5rem" }} />
-            {" "}
+            <FontAwesomeIcon icon={faUser} style={{ marginRight: "0.5rem" }} />{" "}
           </div>
           <h2 className={styles.name}>{profile.name}</h2>
           <p className={styles.email}>{profile.email}</p>
@@ -33,6 +34,9 @@ export default function Profile() {
             </li>
             <li>
               <strong>Email:</strong> {profile.email}
+            </li>
+            <li>
+              <strong>Items in Cart:</strong> {noOfItems()}
             </li>
           </ul>
         </div>
