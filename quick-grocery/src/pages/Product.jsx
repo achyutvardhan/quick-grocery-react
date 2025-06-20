@@ -1,8 +1,15 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import OutletProduct from "../components/OutletProduct";
 export default function Product() {
-  // console.log(1)
+  const location = useLocation();
+  const getActiveClass = (path) => {
+    if (path === "/ourProduct" && location.pathname === "/ourProduct")
+      return "active-category";
+    if (path !== "/ourProduct" && location.pathname.includes(path))
+      return "active-category";
+    return "";
+  };
   return (
     <>
       <section className="product-catalogue">
@@ -11,24 +18,52 @@ export default function Product() {
           <div className="category-filter">
             <ul>
               <li>
-                <Link to={"/ourProduct"} className="active">
+                <Link
+                  to={"/ourProduct"}
+                  className={getActiveClass("/ourProduct")}
+                >
                   All
                 </Link>
               </li>
               <li>
-                <Link to={"/ourProduct/Fruits"}>Fruits</Link>
+                <Link
+                  to={"/ourProduct/Fruits"}
+                  className={getActiveClass("/ourProduct/Fruits")}
+                >
+                  Fruits
+                </Link>
               </li>
               <li>
-                <Link to={"/ourProduct/Vegetables"}>Vegetables</Link>
+                <Link
+                  to={"/ourProduct/Vegetables"}
+                  className={getActiveClass("/ourProduct/Vegetables")}
+                >
+                  Vegetables
+                </Link>
               </li>
               <li>
-                <Link to={"/ourProduct/Dairy"}>Dairy</Link>
+                <Link
+                  to={"/ourProduct/Dairy"}
+                  className={getActiveClass("/ourProduct/Dairy")}
+                >
+                  Dairy
+                </Link>
               </li>
               <li>
-                <Link to={"/ourProduct/Bakery"}>Bakery</Link>
+                <Link
+                  to={"/ourProduct/Bakery"}
+                  className={getActiveClass("/ourProduct/Bakery")}
+                >
+                  Bakery
+                </Link>
               </li>
               <li>
-                <Link to={"/ourProduct/Meat"}>Meat</Link>
+                <Link
+                  to={"/ourProduct/Meat"}
+                  className={getActiveClass("/ourProduct/Meat")}
+                >
+                  Meat
+                </Link>
               </li>
             </ul>
           </div>
