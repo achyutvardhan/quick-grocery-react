@@ -7,7 +7,7 @@ const CartProvider = ({ children }) => {
   const { profile } = useContext(ProfileContext);
   const [cartItem, setCartItem] = useState([]);
   const noOfItems = () => {
-    const arr = cartItem.items || [];
+    const arr = cartItem?.items || [];
     let sum = 0;
     arr.forEach((ele) => {
       sum += ele.quantity;
