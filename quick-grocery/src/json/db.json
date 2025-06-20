@@ -235,6 +235,12 @@
       "name": "Gaurav",
       "email": "g@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "09f6",
+      "name": "Gaurav",
+      "email": "nahata@gmail.com",
+      "password": "12345"
     }
   ],
   "product": {
