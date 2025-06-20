@@ -1,6 +1,7 @@
 import React , {useContext, useEffect, useState} from "react";
 import CartItemCard from "../components/CartItemCard";
 import { CartContext } from "../context/CartContext";
+import { postFromCart } from "../js/orderFetch";
 
 
 
@@ -11,6 +12,11 @@ export default function AddToCart() {
   }, []);
  const items = cartItem?.items;
  console.log(items)
+
+ const oncheckoutHandler = async()=>{
+    const postdataToOrders = await postFromCart(cartItem);
+    console.log(postdataToOrders);
+ }
   return (
     <>
       <div className="cp-wrapper">
@@ -31,7 +37,7 @@ export default function AddToCart() {
               <span>Total</span>
               <span id="cpGrand">${totalSum() + 3.5}</span>
             </div>
-            <button className="cp-btn">Proceed to Buy</button>
+            <button className="cp-btn" onClick={oncheckoutHandler} >Proceed to Buy</button>
           </aside>
           <section className="cp-items" id="cpItemList">
             {items?.map((data,index)=> {return <CartItemCard  data={data} key={index} />})}
