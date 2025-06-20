@@ -1142,7 +1142,7 @@ nav ul li a:hover .fa-shopping-cart {
   color: #bbb;
 }
 :root {
-  --cp-green: #4caf50;
+  --cp-green: #4caf50;  
   --cp-green-dark: #3e8e41;
   --cp-light: #f9f9f9;
   --cp-border: #e0e0e0;
@@ -1160,7 +1160,7 @@ nav ul li a:hover .fa-shopping-cart {
 /* ---------- PAGE LAYOUT ---------- */
 .cp-wrapper {
   background: linear-gradient(135deg, #e0ffe7 0%, #bbf7d0 40%, #d9f99d 100%);
-  min-height: 100vh;
+  min-height: 90vh;
   padding: 2rem 1rem;
 }
 
