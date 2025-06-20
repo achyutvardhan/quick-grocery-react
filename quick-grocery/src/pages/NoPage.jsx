@@ -4,7 +4,7 @@ export default function NoPage() {
     return (
         <div style={{
             minHeight: '100vh',
-            background: 'linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%)',
+            background: 'inear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
