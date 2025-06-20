@@ -2,6 +2,7 @@ import React , {useContext, useEffect, useState} from "react";
 import CartItemCard from "../components/CartItemCard";
 import { CartContext } from "../context/CartContext";
 import { postFromCart } from "../js/orderFetch";
+import { deleteAllItem } from "../js/cartFetch";
 
 
 
@@ -14,8 +15,14 @@ export default function AddToCart() {
  console.log(items)
 
  const oncheckoutHandler = async()=>{
+     console.log(cartItem)
+    const newCartItem = {...cartItem , total : totalSum()+3.5}
+    console.log(newCartItem)
     const postdataToOrders = await postFromCart(cartItem);
     console.log(postdataToOrders);
+    const deleteAllItems = await deleteAllItem(cartItem.userId);
+    console.log(deleteAllItems)
+    refreshFetch();
  }
   return (
     <>

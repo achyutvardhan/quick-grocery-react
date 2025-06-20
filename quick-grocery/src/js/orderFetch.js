@@ -1,39 +1,43 @@
 import axios from "axios";
 
-//  id: "ORD-1001",
-//     date: "2025-06-18",
-//     status: "Delivered",
-//     total: 42.99,
-//     items: [
-//       { name: "Banana", qty: 2 },
-//       { name: "Milk", qty: 1 },
-//     ],
 const postFromCart = async (data) => {
   try {
+    // Fetch existing orders for the user
     const res = await axios.get(
       `http://localhost:3000/orders?userId=${data.userId}`
     );
+    const group = {
+      products: data.items.map((item) => ({
+        ...item,
+        quantity: item.quantity || item.qty || 1,
+      })),
+      total: data.items.reduce(
+        (sum, item) => sum + item.price * (item.quantity || item.qty || 1),
+        0
+      ),
+    };
     if (!res.data[0]) {
+      // No order exists, create a new one (let backend generate the id)
       const userData = {
-        id: `#ORD-${data.id}`,
         userId: data.userId,
         date: new Date(),
         status: "shipped",
-        total: data.total,
-        items: data.items,
+        items: [group], // items is an array of groups
       };
       const response = await axios.post(
-        `http://localhost:3000/orders?userId=${data.userId}`,
-        { userData }
+        `http://localhost:3000/orders`,
+        userData
       );
       return response;
     } else {
-      const items = res.data?.[0]?.items;
-      const newItem = [...items, ...data.items];
-      const response = await axios.post(
-        `http://localhost:3000/orders?userId=${data.userId}`,
+      // Order exists, add new group to items
+      const order = res.data[0];
+      const items = order.items || [];
+      const newItems = [...items, group];
+      const response = await axios.patch(
+        `http://localhost:3000/orders/${order.id}`,
         {
-          items: newItem,
+          items: newItems,
         }
       );
       return response;
