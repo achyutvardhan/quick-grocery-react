@@ -26,6 +26,7 @@ const CartProvider = ({ children }) => {
 
   const refreshFetch = async () => {
     const res = await cartFetch(profile.id);
+    // console.log(res)
     setCartItem(res[0]);
     noOfItems();
     totalSum();

@@ -18,7 +18,7 @@ export default function Header() {
       <div className="container">
         <div className="logo">
           <h1>QuickGrocery</h1>
-          <div class="search-bar">
+          <div className="search-bar">
             <form className="search-bar">
               <input type="text" placeholder="Search for products..." />
               <button type="submit" class="search-btn">
