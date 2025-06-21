@@ -25,10 +25,9 @@ const postFromCart = async (data) => {
       ),
     };
     if (!res.data[0]) {
-      // No order exists, create a new one (let backend generate the id)
       const userData = {
         userId: data.userId,
-        order: [orderGroup], // 'order' is an array of order groups
+        order: [orderGroup], 
       };
       const response = await axios.post(
         `http://localhost:3000/orders`,
@@ -36,7 +35,6 @@ const postFromCart = async (data) => {
       );
       return response;
     } else {
-      // Order exists, add new order group to 'order' array
       const userOrder = res.data[0];
       const orderArr = userOrder.order || [];
       const newOrderArr = [...orderArr, orderGroup];
@@ -53,4 +51,23 @@ const postFromCart = async (data) => {
   }
 };
 
-export { postFromCart };
+
+const cancelOrderFromOrders = async (order)=>{
+  try {
+    const findUser = await axios.get(`http://localhost:3000/orders?userId=${order?.userId}`);
+    if(!findUser) return {status : false , message : "User Not found"};
+    const orders = findUser?.data[0]?.order;
+    console.log(orders)
+
+    const currentOrderToCancel = orders?.filter((x) => x.id !== order.id)
+    console.log(currentOrderToCancel)
+    const postRemainOrder = await axios.patch(`http://localhost:3000/orders/${findUser?.data[0].id}` , {
+      order : currentOrderToCancel
+    })
+   return {status : true , postRemainOrder};
+  } catch (error) {
+    return{status: false};
+  }
+}
+
+export { postFromCart , cancelOrderFromOrders };

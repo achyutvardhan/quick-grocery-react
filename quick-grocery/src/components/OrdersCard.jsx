@@ -1,7 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import styles from "../css/orders.module.css";
+import { cancelOrderFromOrders } from "../js/orderFetch";
+import { ProfileContext } from "../context/ProfileContext";
+import { OrdersContext } from "../context/OrdersContext";
 export default function OrdersCard({ order }) {
 //   console.log(order);
+const {profile} = useContext(ProfileContext);
+const {refreshOrders} = useContext(OrdersContext)
 const formatDate = (dateStr) => {
     const dateObj = new Date(dateStr);
     const mm = String(dateObj.getMonth() + 1).padStart(2, "0");
@@ -10,9 +15,20 @@ const formatDate = (dateStr) => {
     return `${mm}-${dd}-${yyyy}`;
 };
 
+const onCancelOrderhandler = async()=>{
+  // console.log("order", { ...order, userId: profile?.id });
+  const copyOrder = { ...order, userId: profile?.id }
+  console.log(copyOrder)
+  const res = await cancelOrderFromOrders(copyOrder);
+  console.log(res)
+  if(res.status)
+  refreshOrders();
+}
+
+
   return (
     <>
-      <li className={styles.orderItem} key={order.id}>
+      <li className={styles.orderItem} >
         <div className={styles.orderHeaderRow}>
           <div className={styles.orderHeaderLeft}>
             <span className={styles.orderId}>#{order.id}</span>
@@ -31,7 +47,7 @@ const formatDate = (dateStr) => {
               {order.status}
             </span>
             {order.status !== "Cancelled" && order.status !== "Delivered" && (
-              <button className={styles.cancelBtn}>Cancel Order</button>
+              <button className={styles.cancelBtn} onClick={onCancelOrderhandler} >Cancel Order</button>
             )}
           </div>
         </div>
