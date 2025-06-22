@@ -4,13 +4,28 @@ import { ProfileContext } from "../context/ProfileContext";
 import { CartContext } from "../context/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import Loader from "../components/Loader";
 
 export default function Profile() {
   const { profile } = useContext(ProfileContext);
   const { noOfItems } = useContext(CartContext);
 
   if (!profile) {
-    return <div className={styles.loading}>Loading profile...</div>;
+    return (
+      <div className={styles.loading}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: "60vh",
+            width: "100%",
+          }}
+        >
+          <Loader color="#32cd32" size="medium" text="" textColor="" />
+        </div>
+      </div>
+    );
   }
 
   return (

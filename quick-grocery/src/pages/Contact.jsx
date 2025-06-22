@@ -1,39 +1,62 @@
-import React, { useState } from 'react';
-import styles from '../css/contact.module.css';
- 
+import Loader from "../components/Loader";
+import React, { useState, useEffect } from "react";
+import styles from "../css/contact.module.css";
+
 const Contact = () => {
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
     privacy: false,
   });
   const [submitted, setSubmitted] = useState(false);
- 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setForm((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
     setForm({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
       privacy: false,
     });
     setTimeout(() => setSubmitted(false), 5000);
   };
- 
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "60vh",
+          width: "100%",
+        }}
+      >
+        <Loader color="#32cd32" size="medium" text="" textColor="" />
+      </div>
+    );
+  }
+
   return (
     <>
       {/* Hero Banner */}
@@ -45,7 +68,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
- 
+
       {/* Contact Section */}
       <section className={styles.contactSection}>
         <div className={styles.container}>
@@ -53,7 +76,8 @@ const Contact = () => {
             <div className={styles.contactInfo}>
               <h2>Get In Touch</h2>
               <p>
-                We'd love to hear from you. Please fill out the form or use the contact information below.
+                We'd love to hear from you. Please fill out the form or use the
+                contact information below.
               </p>
               <div className={styles.infoItem}>
                 <h3>Address</h3>
@@ -72,7 +96,9 @@ const Contact = () => {
               <div className={styles.infoItem}>
                 <h3>Email</h3>
                 <p>
-                  <a href="mailto:info@quickgrocery.com">info@quickgrocery.com</a>
+                  <a href="mailto:info@quickgrocery.com">
+                    info@quickgrocery.com
+                  </a>
                 </p>
               </div>
               <div className={styles.infoItem}>
@@ -86,9 +112,15 @@ const Contact = () => {
                 </p>
               </div>
               <div className={styles.socialLinks}>
-                <a href="#" className={styles.socialLink}>Facebook</a>
-                <a href="#" className={styles.socialLink}>Instagram</a>
-                <a href="#" className={styles.socialLink}>Twitter</a>
+                <a href="#" className={styles.socialLink}>
+                  Facebook
+                </a>
+                <a href="#" className={styles.socialLink}>
+                  Instagram
+                </a>
+                <a href="#" className={styles.socialLink}>
+                  Twitter
+                </a>
               </div>
             </div>
             <div className={styles.contactFormContainer}>
@@ -97,10 +129,25 @@ const Contact = () => {
                 {submitted ? (
                   <div className={styles.formSuccess}>
                     <svg width="48" height="48" fill="none" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="12" fill="#43e97b" opacity="0.2" />
-                      <path d="M7 13l3 3 7-7" stroke="#43e97b" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        fill="#43e97b"
+                        opacity="0.2"
+                      />
+                      <path
+                        d="M7 13l3 3 7-7"
+                        stroke="#43e97b"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
-                    <p>Thank you! Your message has been submitted successfully.</p>
+                    <p>
+                      Thank you! Your message has been submitted successfully.
+                    </p>
                   </div>
                 ) : (
                   <form className={styles.contactForm} onSubmit={handleSubmit}>
@@ -177,9 +224,14 @@ const Contact = () => {
                         checked={form.privacy}
                         onChange={handleChange}
                       />
-                      <label htmlFor="privacy">I agree to the privacy policy</label>
+                      <label htmlFor="privacy">
+                        I agree to the privacy policy
+                      </label>
                     </div>
-                    <button type="submit" className={`${styles.btn} ${styles.btnFull}`}>
+                    <button
+                      type="submit"
+                      className={`${styles.btn} ${styles.btnFull}`}
+                    >
                       Send Message
                     </button>
                   </form>
@@ -189,7 +241,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
- 
+
       {/* Map Section - full width */}
       <div className={styles.mapContainer}>
         <div className={styles.mapInner}>
@@ -206,7 +258,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
- 
+
       {/* FAQ Section - full width */}
       <div className={styles.faqSection}>
         <div className={styles.faqInner}>
@@ -215,25 +267,31 @@ const Contact = () => {
             <div className={styles.faqItem}>
               <h3>How do I track my order?</h3>
               <p>
-                You can track your order by logging into your account and navigating to the order history section. There, you'll find real-time updates on your order status.
+                You can track your order by logging into your account and
+                navigating to the order history section. There, you'll find
+                real-time updates on your order status.
               </p>
             </div>
             <div className={styles.faqItem}>
               <h3>What are your delivery hours?</h3>
               <p>
-                We deliver from 9am to 9pm, seven days a week. You can select your preferred delivery window during checkout.
+                We deliver from 9am to 9pm, seven days a week. You can select
+                your preferred delivery window during checkout.
               </p>
             </div>
             <div className={styles.faqItem}>
               <h3>How do I return a product?</h3>
               <p>
-                If you're not satisfied with a product, please contact our customer service within 24 hours of delivery, and we'll arrange a return or refund.
+                If you're not satisfied with a product, please contact our
+                customer service within 24 hours of delivery, and we'll arrange
+                a return or refund.
               </p>
             </div>
             <div className={styles.faqItem}>
               <h3>Do you offer same-day delivery?</h3>
               <p>
-                Yes, we offer same-day delivery for orders placed before 2pm, subject to availability in your area.
+                Yes, we offer same-day delivery for orders placed before 2pm,
+                subject to availability in your area.
               </p>
             </div>
           </div>
@@ -242,5 +300,5 @@ const Contact = () => {
     </>
   );
 };
- 
+
 export default Contact;

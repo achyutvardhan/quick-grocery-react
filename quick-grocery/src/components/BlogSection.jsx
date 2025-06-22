@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BlogCard from "./BlogCard";
+import Loader from "./Loader";
 
 const BlogSection = () => {
   const [blogs, setBlogs] = useState([]);
@@ -20,7 +21,8 @@ const BlogSection = () => {
       });
   }, []);
 
-  if (loading) return <div>Loading blogs...</div>;
+  if (loading)
+    return <Loader color="#32cd32" size="medium" text="" textColor="" />;
   if (error) return <div>{error}</div>;
 
   return (

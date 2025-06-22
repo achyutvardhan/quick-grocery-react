@@ -1,3 +1,4 @@
+import Loader from "./Loader";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { DataContext } from "../context/DataContext";
@@ -20,10 +21,21 @@ export default function ViewItem() {
   const currentItem = currentCategoryData.find((x) => x.name === item);
   const [cart, setCart] = useState(1);
   const [select, setSelect] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (currentItem?.images?.[0]) setSelect(currentItem.images[0]);
   }, [currentItem]);
+
+  useEffect(() => {
+    // Simulate loading or fetch here
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader color="#32cd32" size="medium" text="" textColor="" />;
+  }
 
   if (!data[category] || !currentItem) {
     return <div>Loading...</div>;
@@ -35,16 +47,15 @@ export default function ViewItem() {
       if (loggedIn) {
         console.log(currentItem);
         const dataItem = {
-          name : currentItem?.name,
-          quantity : cart,
-          price : currentItem?.price,
-          unit : currentItem?.unit,
-          image : currentItem?.images[0]
-        } 
+          name: currentItem?.name,
+          quantity: cart,
+          price: currentItem?.price,
+          unit: currentItem?.unit,
+          image: currentItem?.images[0],
+        };
         const res = await postFromViewItem(profile.id, dataItem);
         console.log(res);
         refreshFetch();
-        
       } else {
         navigate("/Login");
       }

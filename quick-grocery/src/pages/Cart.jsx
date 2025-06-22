@@ -1,32 +1,52 @@
-import React , {useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CartItemCard from "../components/CartItemCard";
 import { CartContext } from "../context/CartContext";
 import { postFromCart } from "../js/orderFetch";
 import { deleteAllItem } from "../js/cartFetch";
 import { OrdersContext } from "../context/OrdersContext";
-
-
+import Loader from "../components/Loader";
 
 export default function AddToCart() {
-  const {cartItem , refreshFetch ,noOfItems , totalSum  } = useContext(CartContext);
-  const {refreshOrders} = useContext(OrdersContext)
-  useEffect(() => { 
+  const { cartItem, refreshFetch, noOfItems, totalSum } =
+    useContext(CartContext);
+  const { refreshOrders } = useContext(OrdersContext);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
     refreshFetch();
   }, []);
- const items = cartItem?.items;
- console.log(items)
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+  const items = cartItem?.items;
+  console.log(items);
 
- const oncheckoutHandler = async()=>{
-     console.log(cartItem)
-    const newCartItem = {...cartItem , total : totalSum()+3.5}
-    console.log(newCartItem)
+  const oncheckoutHandler = async () => {
+    console.log(cartItem);
+    const newCartItem = { ...cartItem, total: totalSum() + 3.5 };
+    console.log(newCartItem);
     const postdataToOrders = await postFromCart(cartItem);
     console.log(postdataToOrders);
     const deleteAllItems = await deleteAllItem(cartItem.userId);
-    console.log(deleteAllItems)
+    console.log(deleteAllItems);
     refreshFetch();
     refreshOrders();
- }
+  };
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "60vh",
+          width: "100%",
+        }}
+      >
+        <Loader color="#32cd32" size="medium" text="" textColor="" />
+      </div>
+    );
+  }
   return (
     <>
       <div className="cp-wrapper">
@@ -47,10 +67,14 @@ export default function AddToCart() {
               <span>Total</span>
               <span id="cpGrand">${totalSum() + 3.5}</span>
             </div>
-            <button className="cp-btn" onClick={oncheckoutHandler} >Proceed to Buy</button>
+            <button className="cp-btn" onClick={oncheckoutHandler}>
+              Proceed to Buy
+            </button>
           </aside>
           <section className="cp-items" id="cpItemList">
-            {items?.map((data,index)=> {return <CartItemCard  data={data} key={index} />})}
+            {items?.map((data, index) => {
+              return <CartItemCard data={data} key={index} />;
+            })}
           </section>
         </div>
       </div>

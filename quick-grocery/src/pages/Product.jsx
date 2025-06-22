@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import OutletProduct from "../components/OutletProduct";
+import Loader from "../components/Loader";
+
 export default function Product() {
   const location = useLocation();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading or fetch here
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   const getActiveClass = (path) => {
     if (path === "/ourProduct" && location.pathname === "/ourProduct")
       return "active-category";
@@ -10,6 +20,22 @@ export default function Product() {
       return "active-category";
     return "";
   };
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "60vh",
+          width: "100%",
+        }}
+      >
+        <Loader color="#32cd32" size="medium" text="" textColor="" />
+      </div>
+    );
+  }
   return (
     <>
       <section className="product-catalogue">
