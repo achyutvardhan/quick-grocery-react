@@ -1,5 +1,6 @@
 import Loader from "../components/Loader";
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import styles from "../css/contact.module.css";
 
 const Contact = () => {
@@ -43,7 +44,11 @@ const Contact = () => {
 
   if (loading) {
     return (
-      <div
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -53,27 +58,56 @@ const Contact = () => {
         }}
       >
         <Loader color="#32cd32" size="medium" text="" textColor="" />
-      </div>
+      </motion.div>
     );
   }
-
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 40 }}
+      transition={{ duration: 0.6, type: "spring", stiffness: 70 }}
+    >
       {/* Hero Banner */}
-      <section className={styles.heroBanner}>
+      <motion.section
+        className={styles.heroBanner}
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className={styles.container}>
-          <div className={styles.heroContent}>
+          <motion.div
+            className={styles.heroContent}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
             <h2>Contact Us</h2>
             <p>We're here to help with any questions or concerns</p>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section className={styles.contactSection}>
+      <motion.section
+        className={styles.contactSection}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.7 }}
+      >
         <div className={styles.container}>
-          <div className={styles.contactContainer}>
-            <div className={styles.contactInfo}>
+          <motion.div
+            className={styles.contactContainer}
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+          >
+            <motion.div
+              className={styles.contactInfo}
+              initial={{ x: -40, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.7 }}
+            >
               <h2>Get In Touch</h2>
               <p>
                 We'd love to hear from you. Please fill out the form or use the
@@ -122,8 +156,13 @@ const Contact = () => {
                   Twitter
                 </a>
               </div>
-            </div>
-            <div className={styles.contactFormContainer}>
+            </motion.div>
+            <motion.div
+              className={styles.contactFormContainer}
+              initial={{ x: 40, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.7 }}
+            >
               <h2>Send a Message</h2>
               <div>
                 {submitted ? (
@@ -237,10 +276,10 @@ const Contact = () => {
                   </form>
                 )}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Map Section - full width */}
       <div className={styles.mapContainer}>
@@ -297,7 +336,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

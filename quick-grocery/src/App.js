@@ -13,12 +13,14 @@ import Cart from "./pages/Cart";
 import NoPage from "./pages/NoPage";
 import ViewItem from "./components/ViewItem";
 import Profile from "./pages/Profile";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext , useState } from "react";
 import { DataContext } from "./context/DataContext";
 import { productFetch } from "./js/productFetch";
 import Orders from "./pages/Orders";
+import Loader from "./components/Loader";
 function App() {
   const { responseHandler } = useContext(DataContext);
+    const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       const data = await productFetch();
@@ -26,6 +28,26 @@ function App() {
     };
     fetchData();
   }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "60vh",
+          width: "100%",
+        }}
+      >
+        <Loader color="#32cd32" size="medium" text="" textColor="" />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -37,7 +59,7 @@ function App() {
             <Route element={<PrivateRoute />}>
               <Route path="/AddToCart/:userId" element={<Cart />} />
               <Route path="/profile/:userId" element={<Profile />} />
-              <Route path="/orders/:userId" element={<Orders/>}/>
+              <Route path="/orders/:userId" element={<Orders />} />
             </Route>
             <Route path="/ViewItem/:category/:name" element={<ViewItem />} />
             <Route index element={<Home />} />

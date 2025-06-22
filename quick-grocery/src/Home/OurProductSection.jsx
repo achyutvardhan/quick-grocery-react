@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
-import {DataContext} from "../context/DataContext"
+import { DataContext } from "../context/DataContext";
 import ProductCard from "../components/ProductCard";
 export default function Product() {
-  const {data} = useContext(DataContext)
+  const { data } = useContext(DataContext);
   const location = useLocation();
-//    const [arr , setArr] = useState([])
-var [arr , setArr] = useState([])
+  //    const [arr , setArr] = useState([])
+  var [arr, setArr] = useState([]);
   const getActiveClass = (path) => {
     if (path === "/ourProduct" && location.pathname === "/ourProduct")
       return "active-category";
@@ -15,15 +15,15 @@ var [arr , setArr] = useState([])
     return "";
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     const items = [
-    data.Fruits?.[0],
-    data.Vegetables?.[0],
-    data.Bakery?.[0],
-    data.Dairy?.[0],
-  ].filter(Boolean)
+      { ...data.Fruits?.[0], category: "Fruits" },
+      { ...data.Vegetables?.[0], category: "Vegetables" },
+      { ...data.Bakery?.[0], category: "Bakery" },
+      { ...data.Dairy?.[0], category: "Dairy" },
+    ].filter(Boolean);
     setArr(items);
-  },[data])
+  }, [data]);
   return (
     <>
       <section className="product-catalogue">
@@ -32,10 +32,7 @@ var [arr , setArr] = useState([])
           <div className="category-filter">
             <ul>
               <li>
-                <Link
-                  to={"/ourProduct"}
-                  className="active"
-                >
+                <Link to={"/ourProduct"} className="active">
                   All
                 </Link>
               </li>
@@ -82,7 +79,9 @@ var [arr , setArr] = useState([])
             </ul>
           </div>
           <div className="product-grid">
-             {arr?.map((data , index) => <ProductCard data={data} ctg={"null"} key={index}/>)}
+            {arr?.map((data, index) => (
+              <ProductCard data={data} ctg={"All"} key={index} />
+            ))}
           </div>
         </div>
       </section>
