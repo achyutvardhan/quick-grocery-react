@@ -93,23 +93,7 @@
     {
       "id": "8407",
       "userId": "5ac0",
-      "order": [
-        {
-          "id": "1750592141813-888",
-          "products": [
-            {
-              "name": "Apple",
-              "quantity": 6,
-              "price": 0.99,
-              "unit": "each",
-              "image": "https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg"
-            }
-          ],
-          "status": "shipped",
-          "date": "2025-06-22T11:35:41.813Z",
-          "total": 5.9399999999999995
-        }
-      ]
+      "order": []
     }
   ],
   "profile": [

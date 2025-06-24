@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "../css/orders.module.css";
 import OrdersCard from "../components/OrdersCard";
+import EmptyOrders from "../components/EmptyOrders";
 import { OrdersContext } from "../context/OrdersContext";
 import Loader from "../components/Loader";
 
@@ -12,11 +13,17 @@ export default function Orders() {
   useEffect(() => {
     refreshOrders();
   }, []);
-
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
+
+  // Check if orders are empty
+  const isOrdersEmpty =
+    !orders ||
+    orders.length === 0 ||
+    !orders?.[0]?.order ||
+    orders?.[0]?.order?.length === 0;
 
   if (loading) {
     return (
@@ -53,17 +60,19 @@ export default function Orders() {
           type: "spring",
         }}
       >
+        {" "}
         <div className={styles.ordersContainer}>
           <div className={styles.ordersGlass}>
             <div className={styles.ordersTitle}>My Orders</div>
-            <ul className={styles.ordersList}>
-              {orders.length === 0 && (
-                <div className={styles.orderEmpty}>No orders found.</div>
-              )}
-              {orders?.[0]?.order?.map((order, index) => (
-                <OrdersCard order={order} key={index} />
-              ))}
-            </ul>
+            {isOrdersEmpty ? (
+              <EmptyOrders />
+            ) : (
+              <ul className={styles.ordersList}>
+                {orders?.[0]?.order?.map((order, index) => (
+                  <OrdersCard order={order} key={index} />
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </motion.div>

@@ -21,7 +21,7 @@ export default function Home() {
     {
       loggedIn && refreshFetch() && refreshOrders();
     }
-  }, []);
+  }, [loggedIn]);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 800);
