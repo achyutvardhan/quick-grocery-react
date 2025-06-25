@@ -65,10 +65,65 @@
 }
 
 .orderEmpty {
-  color: #aaa;
-  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-top: 2rem;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px 0 rgba(34, 197, 94, 0.08),
+    0 1.5px 8px 0 rgba(0, 0, 0, 0.04);
+  border: 2px solid rgba(187, 247, 208, 0.2);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+}
+
+.orderEmpty::before {
+  content: "📦";
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+  display: block;
+}
+
+.orderEmpty .emptyTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.orderEmpty .emptyMessage {
+  font-size: 1.1rem;
+  color: #65a30d;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.orderEmpty .emptyAction {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.2);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.orderEmpty .emptyAction:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  box-shadow: 0 6px 24px rgba(34, 197, 94, 0.3);
+  transform: translateY(-2px);
 }
 
 .ordersTableWrapper {
@@ -288,6 +343,16 @@
     align-items: flex-start;
     margin-top: 0.5rem;
   }
+  .orderEmpty {
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+  }
+  .orderEmpty::before {
+    font-size: 3rem;
+  }
+  .orderEmpty .emptyTitle {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -322,5 +387,24 @@
   }
   .totalValue {
     font-size: 1rem;
+  }
+  .orderEmpty {
+    padding: 1.5rem 0.8rem;
+    border-radius: 12px;
+  }
+  .orderEmpty::before {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .orderEmpty .emptyTitle {
+    font-size: 1.3rem;
+  }
+  .orderEmpty .emptyMessage {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .orderEmpty .emptyAction {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }

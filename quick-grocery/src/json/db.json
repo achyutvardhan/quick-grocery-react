@@ -92,22 +92,7 @@
     {
       "id": "bd9f",
       "userId": "5ac0",
-      "items": [
-        {
-          "name": "Apple",
-          "quantity": 1,
-          "price": 0.99,
-          "unit": "each",
-          "image": "https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg"
-        },
-        {
-          "name": "Banana",
-          "quantity": 1,
-          "price": 0.59,
-          "unit": "each",
-          "image": "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350"
-        }
-      ]
+      "items": []
     }
   ],
   "orders": [
