@@ -48,6 +48,19 @@ export default function AddToCart() {
   //   setShowSuccess(false);
   //   // e.g., navigate("/orders");
   // };
+  
+  const oncheckoutHandler = async () => {
+    console.log(cartItem);
+    const newCartItem = { ...cartItem, total: totalSum() + 3.5 };
+    console.log(newCartItem);
+    const postdataToOrders = await postFromCart(cartItem);
+    console.log(postdataToOrders);
+    const deleteAllItems = await deleteAllItem(cartItem.userId);
+    console.log(deleteAllItems);
+    refreshFetch();
+    refreshOrders();
+  };
+
 
   // Check if cart is empty
   const isCartEmpty = !items || items.length === 0;
@@ -71,19 +84,19 @@ export default function AddToCart() {
     );
   }
 
-  if (showSuccess) {
-    return <PaymentSuccess onTrackOrder={handleTrackOrder} />;
-  }
+  // if (showSuccess) {
+  //   return <PaymentSuccess onTrackOrder={handleTrackOrder} />;
+  // }
 
-  if (showPayment) {
-    return (
-      <PaymentPage
-        total={totalSum() + 3.5}
-        onBack={handleBackToCart}
-        onPay={handlePay}
-      />
-    );
-  }
+  // if (showPayment) {
+  //   return (
+  //     <PaymentPage
+  //       total={totalSum() + 3.5}
+  //       onBack={handleBackToCart}
+  //       onPay={handlePay}
+  //     />
+  //   );
+  // }
 
   return (
     <motion.div

@@ -1297,15 +1297,22 @@ nav ul li a:hover .fa-shopping-cart {
 }
 
 /* ---------- CART ITEM LIST ---------- */
-/* .cp-card {
+.cp-card {
   background: #fff;
   border: 1px solid var(--cp-border);
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.2rem;
   margin-bottom: 1rem;
-} */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.cp-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
 
 .cp-card-img {
   width: 100px;
@@ -1347,17 +1354,42 @@ nav ul li a:hover .fa-shopping-cart {
 }
 .cp-qty-btn {
   width: 34px;
+  height: 34px;
   border: none;
   background: #fff;
   color: var(--cp-green);
   font-size: 1.2rem;
   cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
 }
+
+.cp-qty-btn:hover {
+  background: var(--cp-green);
+  color: #fff;
+}
+
+.cp-qty-btn:active {
+  transform: scale(0.95);
+}
+
 .cp-qty-input {
   width: 48px;
+  height: 34px;
   border: none;
   text-align: center;
   font-size: 1rem;
+  font-weight: 600;
+  color: var(--cp-dark);
+  background: #f8f9fa;
+}
+
+.cp-qty-input:focus {
+  outline: none;
+  background: #fff;
 }
 
 .cp-remove {
@@ -1365,6 +1397,27 @@ nav ul li a:hover .fa-shopping-cart {
   font-size: 0.9rem;
   cursor: pointer;
   margin-left: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.cp-remove:hover {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+.cp-subtotal {
+  font-weight: 600;
+  color: var(--cp-dark);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.cp-subtotal span {
+  color: var(--cp-green);
+  font-weight: 700;
 }
 
 /* ---------- SUMMARY PANEL ---------- */
@@ -1411,6 +1464,73 @@ nav ul li a:hover .fa-shopping-cart {
 }
 .cp-btn:hover {
   background: var(--cp-green-dark);
+}
+
+/* Cart Item Responsive Styles */
+@media (max-width: 768px) {
+  .cp-card {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .cp-card-img {
+    width: 80px;
+    height: 80px;
+    align-self: center;
+  }
+
+  .cp-card-details {
+    gap: 0.8rem;
+  }
+
+  .cp-qty-group {
+    width: fit-content;
+  }
+
+  .cp-remove {
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .cp-subtotal {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cp-card {
+    padding: 0.8rem;
+  }
+
+  .cp-card-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cp-title {
+    font-size: 0.9rem;
+  }
+
+  .cp-price {
+    font-size: 0.9rem;
+  }
+
+  .cp-qty-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .cp-qty-input {
+    width: 40px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .cp-qty-group {
+    height: 30px;
+  }
 }
 
 /* Responsive Design */
