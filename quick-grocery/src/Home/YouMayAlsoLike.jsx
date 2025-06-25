@@ -14,7 +14,7 @@ const YouMayAlsoLike = () => {
     const getFruits  = async () =>{
       try{
         const data = await productFetch();
-        console.log(data)
+        // console.log(data)
         setRelatedProducts(data.Fruits)
         setLoading(false)
       }

@@ -5,7 +5,7 @@ export const cartFetch = async (userId) => {
     const res = await axios.get(
       `http://localhost:3000/cartItems?userId=${userId}`
     );
-    console.log(res.data);
+    // console.log(res.data);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -85,5 +85,21 @@ export const deleteFromAddTCart = async(data , userId)=>{
   } catch (error) {
      console.log(error)
         return false;
+  }
+}
+
+
+export const deleteAllItem = async(userId)=>{
+  try {
+    const response = await axios.get(`http://localhost:3000/cartItems?userId=${userId}`);
+    if (!response.data[0]) {
+      console.log("No cart found for user");
+      return false;
+    }
+    await axios.patch(`http://localhost:3000/cartItems/${response.data[0].id}`, { items: [] });
+    return { items: [] };
+  } catch (error) {
+    console.log(error);
+    return false;
   }
 }

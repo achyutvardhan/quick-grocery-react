@@ -1,94 +1,81 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import styles from "../css/orders.module.css";
-
-// Example static orders data
-const orders = [
-  {
-    id: "ORD-1001",
-    date: "2025-06-18",
-    status: "Delivered",
-    total: 42.99,
-    items: [
-      { name: "Banana", qty: 2 },
-      { name: "Milk", qty: 1 },
-    ],
-  },
-  {
-    id: "ORD-1002",
-    date: "2025-06-15",
-    status: "Shipped",
-    total: 19.5,
-    items: [
-      { name: "Broccoli", qty: 1 },
-      { name: "Egg", qty: 1 },
-    ],
-  },
-  {
-    id: "ORD-1003",
-    date: "2025-06-10",
-    status: "Cancelled",
-    total: 0.0,
-    items: [{ name: "Fish", qty: 1 }],
-  },
-];
+import OrdersCard from "../components/OrdersCard";
+import EmptyOrders from "../components/EmptyOrders";
+import { OrdersContext } from "../context/OrdersContext";
+import Loader from "../components/Loader";
 
 export default function Orders() {
+  const { orders, refreshOrders } = useContext(OrdersContext);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    refreshOrders();
+  }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Check if orders are empty
+  const isOrdersEmpty =
+    !orders ||
+    orders.length === 0 ||
+    !orders?.[0]?.order ||
+    orders?.[0]?.order?.length === 0;
+
+  if (loading) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.7 }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "60vh",
+          width: "100%",
+        }}
+      >
+        <Loader color="#32cd32" size="medium" text="" textColor="" />
+      </motion.div>
+    );
+  }
   return (
-    <div className={styles.ordersContainer}>
-      <div className={styles.ordersGlass}>
-        <div className={styles.ordersTitle}>My Orders</div>
-        <ul className={styles.ordersList}>
-          {orders.length === 0 && (
-            <div className={styles.orderEmpty}>No orders found.</div>
-          )}
-          {orders.map((order) => (
-            <li className={styles.orderItem} key={order.id}>
-              <div className={styles.orderHeaderRow}>
-                <div className={styles.orderHeaderLeft}>
-                  <span className={styles.orderId}>#{order.id}</span>
-                  <span className={styles.orderDate}>{order.date}</span>
-                </div>
-                <div className={styles.orderHeaderRight}>
-                  <span
-                    className={
-                      order.status === "Delivered"
-                        ? styles.statusDelivered
-                        : order.status === "Shipped"
-                        ? styles.statusShipped
-                        : styles.statusCancelled
-                    }
-                  >
-                    {order.status}
-                  </span>
-                  {order.status !== "Cancelled" &&
-                    order.status !== "Delivered" && (
-                      <button className={styles.cancelBtn}>Cancel Order</button>
-                    )}
-                </div>
-              </div>
-              <div className={styles.orderBodyRow}>
-                <div className={styles.orderItemsBox}>
-                  <span className={styles.itemsLabel}>Items:</span>
-                  <ul className={styles.itemsList}>
-                    {order.items.map((item, idx) => (
-                      <li key={idx}>
-                        <span className={styles.itemName}>{item.name}</span>
-                        <span className={styles.itemQty}>x{item.qty}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={styles.orderTotalBox}>
-                  <span className={styles.totalLabel}>Total:</span>
-                  <span className={styles.totalValue}>
-                    ${order.total.toFixed(2)}
-                  </span>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, x: -80 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -80 }}
+      transition={{ duration: 0.8, type: "spring", stiffness: 60 }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.2,
+          duration: 0.6,
+          type: "spring",
+        }}
+      >
+        {" "}
+        <div className={styles.ordersContainer}>
+          <div className={styles.ordersGlass}>
+            <div className={styles.ordersTitle}>My Orders</div>
+            {isOrdersEmpty ? (
+              <EmptyOrders />
+            ) : (
+              <ul className={styles.ordersList}>
+                {orders?.[0]?.order?.map((order, index) => (
+                  <OrdersCard order={order} key={index} />
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }

@@ -9,10 +9,12 @@ import { ProfileContext } from "../context/ProfileContext";
 import { AuthContext } from "../context/AuthContext";
 import { CartContext } from "../context/CartContext";
 import ProfileDropdown from "../components/ProfileDropdown";
+import { OrdersContext } from "../context/OrdersContext";
 export default function Header() {
   const { profile } = useContext(ProfileContext);
   const { loggedIn } = useContext(AuthContext);
   const { noOfItems } = useContext(CartContext);
+  const {noOfOrders} = useContext(OrdersContext)
   return (
     <header className="site-header">
       <div className="container">
@@ -107,7 +109,7 @@ export default function Header() {
                     marginLeft: "2px",
                   }}
                 >
-                  {loggedIn ? 0 : 0}
+                  {loggedIn ? noOfOrders() : 0}
                 </span>
               </Link>
             </li>
