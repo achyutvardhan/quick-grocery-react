@@ -13,14 +13,15 @@ import Cart from "./pages/Cart";
 import NoPage from "./pages/NoPage";
 import ViewItem from "./components/ViewItem";
 import Profile from "./pages/Profile";
-import { useEffect, useContext , useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import { DataContext } from "./context/DataContext";
 import { productFetch } from "./js/productFetch";
 import Orders from "./pages/Orders";
 import Loader from "./components/Loader";
+
 function App() {
   const { responseHandler } = useContext(DataContext);
-    const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       const data = await productFetch();

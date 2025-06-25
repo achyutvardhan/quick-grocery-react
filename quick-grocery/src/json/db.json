@@ -86,7 +86,15 @@
     {
       "id": "bd9f",
       "userId": "5ac0",
-      "items": []
+      "items": [
+        {
+          "name": "Apple",
+          "quantity": 1,
+          "price": 0.99,
+          "unit": "each",
+          "image": "https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg"
+        }
+      ]
     }
   ],
   "orders": [

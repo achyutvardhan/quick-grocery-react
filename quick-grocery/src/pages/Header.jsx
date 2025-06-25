@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
@@ -10,44 +10,75 @@ import { AuthContext } from "../context/AuthContext";
 import { CartContext } from "../context/CartContext";
 import ProfileDropdown from "../components/ProfileDropdown";
 import { OrdersContext } from "../context/OrdersContext";
+
 export default function Header() {
   const { profile } = useContext(ProfileContext);
   const { loggedIn } = useContext(AuthContext);
   const { noOfItems } = useContext(CartContext);
-  const {noOfOrders} = useContext(OrdersContext)
+  const { noOfOrders } = useContext(OrdersContext);
+  const location = useLocation();
+
+  // Function to check if a path is active
+  const isActive = (path) => {
+    if (path === "/" && location.pathname === "/") {
+      return true;
+    }
+    if (path !== "/" && location.pathname.startsWith(path)) {
+      return true;
+    }
+    return false;
+  };
   return (
     <header className="site-header">
       <div className="container">
         <div className="logo">
           <h1>QuickGrocery</h1>
-          <div className="search-bar">
-            <form className="search-bar">
-              <input type="text" placeholder="Search for products..." />
-              <button type="submit" class="search-btn">
-                Search
-              </button>
-            </form>
-          </div>
+        </div>
+
+        <div className="header-search">
+          <form className="search-form">
+            <input type="text" placeholder="Search for products..." />
+            <button type="submit" className="search-btn">
+              Search
+            </button>
+          </form>
         </div>
 
         <nav className="main-nav">
           <ul>
             <li>
-              <Link to="/" className="active">
+              <Link to="/" className={isActive("/") ? "active" : ""}>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/ourProduct">Products</Link>
+              <Link
+                to="/ourProduct"
+                className={isActive("/ourProduct") ? "active" : ""}
+              >
+                Products
+              </Link>
             </li>
             <li>
-              <Link to="/SpecialOffer">Special Offers</Link>
+              <Link
+                to="/SpecialOffer"
+                className={isActive("/SpecialOffer") ? "active" : ""}
+              >
+                Special Offers
+              </Link>
             </li>
             <li>
-              <Link to="/Blog">Blog</Link>
+              <Link to="/Blog" className={isActive("/Blog") ? "active" : ""}>
+                Blog
+              </Link>
             </li>
             <li>
-              <Link to="/Contact">Contact</Link>
+              <Link
+                to="/Contact"
+                className={isActive("/Contact") ? "active" : ""}
+              >
+                Contact
+              </Link>
             </li>
             <li>
               <Link
@@ -113,7 +144,7 @@ export default function Header() {
                 </span>
               </Link>
             </li>
-            <li style={{ position: "relative" }}>
+            <li>
               {loggedIn ? (
                 <div
                   style={{
