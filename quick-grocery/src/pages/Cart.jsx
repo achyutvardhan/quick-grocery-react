@@ -7,12 +7,17 @@ import { deleteAllItem } from "../js/cartFetch";
 import { OrdersContext } from "../context/OrdersContext";
 import Loader from "../components/Loader";
 import { motion } from "framer-motion";
+import PaymentPage from "../components/PaymentPage"; // Add this import
+import PaymentSuccess from "../components/PaymentSuccess"; // Add this import
 
 export default function AddToCart() {
   const { cartItem, refreshFetch, noOfItems, totalSum } =
     useContext(CartContext);
   const { refreshOrders } = useContext(OrdersContext);
   const [loading, setLoading] = useState(true);
+  const [showPayment, setShowPayment] = useState(false); // Add this state
+  const [showSuccess, setShowSuccess] = useState(false); // Add this state
+
   useEffect(() => {
     refreshFetch();
   }, []);
@@ -23,17 +28,26 @@ export default function AddToCart() {
   const items = cartItem?.items;
   console.log(items);
 
-  const oncheckoutHandler = async () => {
-    console.log(cartItem);
-    const newCartItem = { ...cartItem, total: totalSum() + 3.5 };
-    console.log(newCartItem);
-    const postdataToOrders = await postFromCart(cartItem);
-    console.log(postdataToOrders);
-    const deleteAllItems = await deleteAllItem(cartItem.userId);
-    console.log(deleteAllItems);
-    refreshFetch();
-    refreshOrders();
-  };
+  // const oncheckoutHandler = () => {
+  //   setShowPayment(true); // Show payment page
+  // };
+
+  // const handleBackToCart = () => setShowPayment(false);
+
+  // const handlePay = (finalTotal, method) => {
+  //   // Clear cart logic
+  //   cartItem.items = [];
+  //   setShowPayment(false);
+  //   setShowSuccess(true);
+  //   refreshFetch();
+  //   refreshOrders();
+  // };
+
+  // const handleTrackOrder = () => {
+  //   // Implement navigation to order tracking page if needed
+  //   setShowSuccess(false);
+  //   // e.g., navigate("/orders");
+  // };
 
   // Check if cart is empty
   const isCartEmpty = !items || items.length === 0;
@@ -56,6 +70,21 @@ export default function AddToCart() {
       </motion.div>
     );
   }
+
+  if (showSuccess) {
+    return <PaymentSuccess onTrackOrder={handleTrackOrder} />;
+  }
+
+  if (showPayment) {
+    return (
+      <PaymentPage
+        total={totalSum() + 3.5}
+        onBack={handleBackToCart}
+        onPay={handlePay}
+      />
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 80 }}
