@@ -8,6 +8,7 @@ export default function PaymentPage({ total, onBack, onPay }) {
   const [cardNumber, setCardNumber] = useState("");
   const [cardExpiry, setCardExpiry] = useState("");
   const [cardCvv, setCardCvv] = useState("");
+  const [upiId, setUpiId] = useState("");
 
   const paymentOptions = [
     { id: "card", label: "Credit/Debit Card" },
@@ -18,7 +19,10 @@ export default function PaymentPage({ total, onBack, onPay }) {
 
   // Format card number for display
   const formatCardNumber = (num) =>
-    num.replace(/\s?/g, "").replace(/(\d{4})/g, "$1 ").trim();
+    num
+      .replace(/\s?/g, "")
+      .replace(/(\d{4})/g, "$1 ")
+      .trim();
 
   return (
     <motion.div
@@ -132,10 +136,27 @@ export default function PaymentPage({ total, onBack, onPay }) {
               maxLength={3}
               placeholder="CVV"
               value={cardCvv}
-              onChange={(e) =>
-                setCardCvv(e.target.value.replace(/[^\d]/g, ""))
-              }
+              onChange={(e) => setCardCvv(e.target.value.replace(/[^\d]/g, ""))}
             />
+          </div>
+        </div>
+      )}
+
+      {/* UPI Details Form */}
+      {selectedMethod === "upi" && (
+        <div className="upi-form">
+          <div className="upi-form-group">
+            <span className="input-icon">📱</span>
+            <input
+              type="text"
+              placeholder="Enter UPI ID (e.g., username@paytm)"
+              value={upiId}
+              onChange={(e) => setUpiId(e.target.value.toLowerCase())}
+            />
+          </div>
+          <div className="upi-info">
+            <p>💡 Enter your UPI ID to proceed with payment</p>
+            <p>Supported UPI apps: Google Pay, PhonePe, Paytm, BHIM</p>
           </div>
         </div>
       )}
@@ -158,16 +179,27 @@ export default function PaymentPage({ total, onBack, onPay }) {
           className="payment-pay"
           whileTap={{ scale: 0.95 }}
           onClick={() => {
-            if (
-              selectedMethod !== "card" ||
-              (cardNumber.length === 16 &&
+            // Validation for different payment methods
+            if (selectedMethod === "card") {
+              if (
+                cardNumber.length === 16 &&
                 cardName &&
                 cardExpiry.length === 5 &&
-                cardCvv.length === 3)
-            ) {
-              onPay(total.toFixed(2), selectedMethod);
+                cardCvv.length === 3
+              ) {
+                onPay(total.toFixed(2), selectedMethod);
+              } else {
+                alert("Please fill all card details correctly.");
+              }
+            } else if (selectedMethod === "upi") {
+              if (upiId && upiId.includes("@") && upiId.length > 5) {
+                onPay(total.toFixed(2), selectedMethod);
+              } else {
+                alert("Please enter a valid UPI ID.");
+              }
             } else {
-              alert("Please fill all card details correctly.");
+              // For COD and Wallet, no validation needed
+              onPay(total.toFixed(2), selectedMethod);
             }
           }}
         >
