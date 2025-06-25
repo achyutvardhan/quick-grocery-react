@@ -1,5 +1,6 @@
 import React from 'react'
 import SpecialOffer from '../pages/SpecialOffer'
+import { Link } from 'react-router'
 
 const WeeklyDealsCard =({fruit}) =>(
     <div className="product-card" key={fruit.id}>
@@ -13,7 +14,8 @@ const WeeklyDealsCard =({fruit}) =>(
                     ${fruit.price} <span>{fruit.unit}</span>
                   </p>
                   <p className="category">Fruits</p>
-                  <a href="#" className="btn btn-small">Add to Cart</a>
+                  {/* <a href="#" >Add to Cart</a> */}
+                  <Link to={`/ViewItem/${"Fruits"}/${fruit.name}`} className="btn btn-small">Add to Cart</Link>
                 </div>
               </div>
 )
