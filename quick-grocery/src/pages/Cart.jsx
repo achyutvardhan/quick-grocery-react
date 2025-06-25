@@ -9,6 +9,7 @@ import Loader from "../components/Loader";
 import { motion } from "framer-motion";
 import PaymentPage from "../components/PaymentPage"; // Add this import
 import PaymentSuccess from "../components/PaymentSuccess"; // Add this import
+import { useNavigate } from "react-router";
 
 export default function AddToCart() {
   const { cartItem, refreshFetch, noOfItems, totalSum } =
@@ -17,7 +18,7 @@ export default function AddToCart() {
   const [loading, setLoading] = useState(true);
   const [showPayment, setShowPayment] = useState(false); // Add this state
   const [showSuccess, setShowSuccess] = useState(false); // Add this state
-
+  const navigate = useNavigate()
   useEffect(() => {
     refreshFetch();
   }, []);
@@ -28,37 +29,33 @@ export default function AddToCart() {
   const items = cartItem?.items;
   console.log(items);
 
-  // const oncheckoutHandler = () => {
-  //   setShowPayment(true); // Show payment page
-  // };
 
-  // const handleBackToCart = () => setShowPayment(false);
+  const handleBackToCart = () => setShowPayment(false);
 
-  // const handlePay = (finalTotal, method) => {
-  //   // Clear cart logic
-  //   cartItem.items = [];
-  //   setShowPayment(false);
-  //   setShowSuccess(true);
-  //   refreshFetch();
-  //   refreshOrders();
-  // };
-
-  // const handleTrackOrder = () => {
-  //   // Implement navigation to order tracking page if needed
-  //   setShowSuccess(false);
-  //   // e.g., navigate("/orders");
-  // };
-  
-  const oncheckoutHandler = async () => {
+  const handlePay = async() => {
+    // Clear cart logic
     console.log(cartItem);
     const newCartItem = { ...cartItem, total: totalSum() + 3.5 };
     console.log(newCartItem);
-    const postdataToOrders = await postFromCart(cartItem);
+    const postdataToOrders = await postFromCart(newCartItem);
     console.log(postdataToOrders);
     const deleteAllItems = await deleteAllItem(cartItem.userId);
     console.log(deleteAllItems);
+    setShowPayment(false);
+    setShowSuccess(true);
     refreshFetch();
     refreshOrders();
+  };
+
+  const handleTrackOrder = () => {
+    // Implement navigation to order tracking page if needed
+    setShowSuccess(false);
+    // e.g., navigate("/orders");
+    navigate(`/orders/${cartItem.userId}`)
+  };
+  
+  const oncheckoutHandler = () => {
+    setShowPayment(true);
   };
 
 
@@ -84,19 +81,19 @@ export default function AddToCart() {
     );
   }
 
-  // if (showSuccess) {
-  //   return <PaymentSuccess onTrackOrder={handleTrackOrder} />;
-  // }
+  if (showSuccess) {
+    return <PaymentSuccess onTrackOrder={handleTrackOrder} />;
+  }
 
-  // if (showPayment) {
-  //   return (
-  //     <PaymentPage
-  //       total={totalSum() + 3.5}
-  //       onBack={handleBackToCart}
-  //       onPay={handlePay}
-  //     />
-  //   );
-  // }
+  if (showPayment) {
+    return (
+      <PaymentPage
+        total={totalSum() + 3.5}
+        onBack={handleBackToCart}
+        onPay={handlePay}
+      />
+    );
+  }
 
   return (
     <motion.div

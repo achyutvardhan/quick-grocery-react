@@ -19,10 +19,7 @@ const postFromCart = async (data) => {
       })),
       status: "shipped",
       date: new Date(),
-      total: data.items.reduce(
-        (sum, item) => sum + item.price * (item.quantity || item.qty || 1),
-        0
-      ),
+      total: data.total
     };
     if (!res.data[0]) {
       const userData = {
