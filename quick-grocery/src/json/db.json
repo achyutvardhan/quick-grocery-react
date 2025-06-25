@@ -5,6 +5,7 @@
       "title": "10 Superfoods to Boost Your Immunity",
       "date": "May 5, 2025",
       "excerpt": "Discover the power of these amazing foods that can help strengthen your immune system naturally.",
+      "description": "Superfoods are nutrient-rich foods considered to be especially beneficial for health and well-being. In this article, we explore ten superfoods that can help boost your immune system, from berries and leafy greens to nuts and seeds. Learn about the unique vitamins, minerals, and antioxidants each food provides, and get practical tips on how to incorporate them into your daily meals. Whether you’re looking to prevent illness or simply want to feel your best, these superfoods can play a key role in supporting your body’s natural defenses and keeping you healthy year-round.",
       "image": "https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "alt": "Superfoods",
       "link": "#"
@@ -14,6 +15,7 @@
       "title": "Easy Ways to Include More Vegetables in Your Diet",
       "date": "May 2, 2025",
       "excerpt": "Simple tips and tricks to incorporate more vegetables into your daily meals without sacrificing flavor.",
+      "description": "Adding more vegetables to your diet doesn’t have to be difficult or boring. This blog shares creative and practical strategies to help you enjoy a wider variety of veggies every day. From sneaking spinach into smoothies to roasting a colorful mix of seasonal produce, you’ll find easy recipes and meal ideas that make vegetables the star of your plate. Discover how to prep veggies in advance, use them in snacks, and even satisfy picky eaters. Eating more vegetables can improve your health, boost your energy, and add delicious flavors to your meals.",
       "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "alt": "Cooking Vegetables",
       "link": "#"
@@ -23,6 +25,7 @@
       "title": "Sustainable Grocery Shopping Guide",
       "date": "April 27, 2025",
       "excerpt": "Learn how to make eco-friendly choices when shopping for groceries and reduce your environmental impact.",
+      "description": "Sustainable grocery shopping is about making choices that are good for both your health and the planet. This guide covers practical tips for reducing waste, choosing local and seasonal produce, and supporting ethical brands. Learn how to read labels, avoid unnecessary packaging, and plan your shopping trips to minimize food waste. By making small changes in your grocery habits, you can lower your carbon footprint and contribute to a healthier environment. Start your journey toward more mindful and sustainable grocery shopping with these actionable steps.",
       "image": "https://plus.unsplash.com/premium_photo-1667385010653-dc544b00b75c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "alt": "Sustainable Shopping",
       "link": "#"
@@ -32,6 +35,7 @@
       "title": "Weekend Meal Prep: Save Time and Eat Healthy",
       "date": "April 20, 2025",
       "excerpt": "A complete guide to efficient meal preparation that will save you time during the busy week.",
+      "description": "Meal prepping on the weekend is a smart way to save time and eat healthier throughout the week. This blog walks you through the basics of meal prep, from planning your menu and grocery list to cooking and storing your meals safely. Discover time-saving tips, storage hacks, and easy recipes that can be made in advance. With a little organization, you’ll have nutritious breakfasts, lunches, and dinners ready to go, helping you avoid last-minute takeout and stick to your health goals. Make your weekdays easier and tastier with effective meal prep strategies.",
       "image": "https://images.unsplash.com/photo-1556910633-5099dc3971e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "alt": "Meal Prep",
       "link": "#"
@@ -41,6 +45,7 @@
       "title": "Seasonal Fruits: Why They're Better for You and the Planet",
       "date": "April 15, 2025",
       "excerpt": "The benefits of choosing seasonal produce and a handy guide to what's in season now.",
+      "description": "Eating seasonal fruits offers a range of benefits for both your health and the environment. Seasonal produce is often fresher, tastier, and more nutritious because it’s harvested at its peak. It also tends to be more affordable and has a lower environmental impact due to reduced transportation and storage needs. This article explains why choosing seasonal fruits is a smart choice, provides a guide to what’s in season throughout the year, and shares tips for making the most of your local harvest. Enjoy better flavor and support sustainability with seasonal eating.",
       "image": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "alt": "Seasonal Fruits",
       "link": "#"
@@ -50,6 +55,7 @@
       "title": "Beginner's Guide to Baking Your Own Bread",
       "date": "April 10, 2025",
       "excerpt": "Simple recipes and techniques to help you start making delicious homemade bread.",
+      "description": "Baking bread at home is a rewarding and enjoyable experience, even for beginners. This guide covers the basics of bread making, from choosing the right ingredients to mastering kneading and proofing techniques. Learn about different types of bread, essential tools, and common mistakes to avoid. With step-by-step instructions and easy recipes, you’ll gain the confidence to bake fresh, delicious bread in your own kitchen. Whether you prefer classic white loaves or hearty whole grains, homemade bread is healthier, tastier, and fills your home with an irresistible aroma.",
       "image": "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "alt": "Baking Bread",
       "link": "#"
@@ -86,7 +92,15 @@
     {
       "id": "bd9f",
       "userId": "5ac0",
-      "items": []
+      "items": [
+        {
+          "name": "Banana",
+          "quantity": 4,
+          "price": 0.59,
+          "unit": "each",
+          "image": "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350"
+        }
+      ]
     }
   ],
   "orders": [
