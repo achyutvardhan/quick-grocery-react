@@ -10,6 +10,8 @@ import FoodBlogSection from "../Home/FoodBlogSection";
 import { OrdersContext } from "../context/OrdersContext";
 import Loader from "../components/Loader";
 import { motion, AnimatePresence } from "framer-motion";
+import HappyCustomers from "../Home/HappyCustomers";
+import PartnerBrands from "../Home/PartnerBrands";
 
 export default function Home() {
   const { refreshFetch } = useContext(CartContext);
@@ -225,6 +227,9 @@ export default function Home() {
         >
           <YouMayAlsoLike />
         </motion.div>
+
+        <PartnerBrands />
+        <HappyCustomers />
       </motion.div>
     </AnimatePresence>
   );
