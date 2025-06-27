@@ -167,7 +167,7 @@ export default function Header() {
                   >
                     Hi, {profile?.name || "User"}
                   </span>
-                  <ProfileDropdown profile={profile} />
+                  <ProfileDropdown  />
                 </div>
               ) : (
                 <Link

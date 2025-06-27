@@ -92,15 +92,7 @@
     {
       "id": "bd9f",
       "userId": "5ac0",
-      "items": [
-        {
-          "name": "Milk",
-          "quantity": 1,
-          "price": 3.49,
-          "unit": "gallon",
-          "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWlsa3xlbnwwfHwwfHx8Mg%3D%3D"
-        }
-      ]
+      "items": []
     }
   ],
   "orders": [
@@ -182,6 +174,35 @@
           "status": "shipped",
           "date": "2025-06-25T10:29:50.031Z",
           "total": 4.5
+        },
+        {
+          "id": "1750994343049-396",
+          "products": [
+            {
+              "name": "Milk",
+              "quantity": 1,
+              "price": 3.49,
+              "unit": "gallon",
+              "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWlsa3xlbnwwfHwwfHx8Mg%3D%3D"
+            },
+            {
+              "name": "Banana",
+              "quantity": 1,
+              "price": 0.59,
+              "unit": "each",
+              "image": "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350"
+            },
+            {
+              "name": "Strawberry",
+              "quantity": 1,
+              "price": 2.99,
+              "unit": "1 lb",
+              "image": "https://burst.shopifycdn.com/photos/ripe-red-strawberries-in-a-white-bowl.jpg?width=373&format=pjpg&exif=0&iptc=0"
+            }
+          ],
+          "status": "shipped",
+          "date": "2025-06-27T03:19:03.049Z",
+          "total": 10.5
         }
       ]
     }

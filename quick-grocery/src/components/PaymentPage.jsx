@@ -17,7 +17,6 @@ export default function PaymentPage({ total, onBack, onPay }) {
     { id: "wallet", label: "Wallet" },
   ];
 
-  // Format card number for display
   const formatCardNumber = (num) =>
     num
       .replace(/\s?/g, "")
@@ -32,7 +31,6 @@ export default function PaymentPage({ total, onBack, onPay }) {
       exit={{ opacity: 0, y: 60 }}
       transition={{ duration: 0.7, type: "spring" }}
     >
-      {/* Debit Card UI */}
       <motion.div
         className="debit-card-ui"
         initial={{ opacity: 0, y: -30 }}
@@ -87,7 +85,7 @@ export default function PaymentPage({ total, onBack, onPay }) {
         </div>
       </div>
 
-      {/* Card Details Form */}
+
       {selectedMethod === "card" && (
         <div className="card-form">
           <div className="card-form-group">
@@ -142,7 +140,6 @@ export default function PaymentPage({ total, onBack, onPay }) {
         </div>
       )}
 
-      {/* UPI Details Form */}
       {selectedMethod === "upi" && (
         <div className="upi-form">
           <div className="upi-form-group">
@@ -179,7 +176,7 @@ export default function PaymentPage({ total, onBack, onPay }) {
           className="payment-pay"
           whileTap={{ scale: 0.95 }}
           onClick={() => {
-            // Validation for different payment methods
+            
             if (selectedMethod === "card") {
               if (
                 cardNumber.length === 16 &&
