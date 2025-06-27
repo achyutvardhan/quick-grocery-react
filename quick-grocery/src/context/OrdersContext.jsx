@@ -12,7 +12,7 @@ const OrdersProvider = ({children})=>{
     }
     const noOfOrders = () => {
         // console.log(orders?.[0]?.order?.length)
-        return orders?.[0]?.order?.length;
+        return orders?.[0]?.order?.length || 0;
     }
     const refreshOrders = ()=>{
         fetchOrders();
