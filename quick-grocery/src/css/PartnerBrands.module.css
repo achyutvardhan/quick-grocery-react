@@ -1,0 +1,69 @@
+.partnerSection {
+  background: white;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.title {
+  color: #32cd32;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.sliderWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.slider {
+  display: flex;
+  gap: 2.5rem;
+  animation: slideLeft 18s linear infinite;
+  width: max-content;
+  align-items: center;
+}
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.brandLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.7rem 2.2rem;
+  margin: 0.5rem 0;
+  box-shadow: 0 2px 12px rgba(50,205,50,0.07);
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+  border: 2px solid #eaffea;
+  min-width: 120px;
+  min-height: 60px;
+}
+.brandLogo:hover {
+  box-shadow: 0 4px 24px rgba(50,205,50,0.10);
+}
+.logoImg {
+  height: 40px;
+  width: auto;
+  filter: grayscale(0.2);
+  transition: filter 0.2s, transform 0.2s;
+}
+.brandLogo:hover .logoImg {
+  filter: none;
+  transform: scale(1.08);
+}
+@media (max-width: 700px) {
+  .slider {
+    gap: 1.2rem;
+  }
+  .brandLogo {
+    padding: 0.5rem 1.2rem;
+    min-width: 80px;
+    min-height: 40px;
+  }
+  .logoImg {
+    height: 28px;
+  }
+}
