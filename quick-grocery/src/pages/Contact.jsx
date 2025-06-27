@@ -2,7 +2,6 @@ import Loader from "../components/Loader";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "../css/contact.module.css";
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [form, setForm] = useState({
