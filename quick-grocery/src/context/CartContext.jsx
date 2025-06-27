@@ -16,7 +16,7 @@ const CartProvider = ({ children }) => {
   };
 
   const totalSum = ()=>{
-     const arr = cartItem.items || [];
+     const arr = cartItem?.items || [];
      let sum = 0;
      arr.forEach(ele=>{
       sum += (ele.quantity * ele.price)
