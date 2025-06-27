@@ -65,7 +65,7 @@
     {
       "id": "1",
       "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "category": "fruits"
+      "category": "Fruits"
     },
     {
       "id": "2",
@@ -92,7 +92,15 @@
     {
       "id": "bd9f",
       "userId": "5ac0",
-      "items": []
+      "items": [
+        {
+          "name": "Banana",
+          "quantity": 1,
+          "price": 0.59,
+          "unit": "each",
+          "image": "https://images.freeimages.com/images/large-previews/360/banana-1-1330048.jpg?fmt=webp&h=350"
+        }
+      ]
     },
     {
       "id": "0183",
@@ -104,23 +112,7 @@
     {
       "id": "8407",
       "userId": "5ac0",
-      "order": [
-        {
-          "id": "1750998994534-386",
-          "products": [
-            {
-              "name": "Cheese",
-              "quantity": 7,
-              "price": 4.99,
-              "unit": "block",
-              "image": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hlZXNlfGVufDB8fDB8fHwy"
-            }
-          ],
-          "status": "shipped",
-          "date": "2025-06-27T04:36:34.534Z",
-          "total": 38.5
-        }
-      ]
+      "order": []
     },
     {
       "id": "f171",

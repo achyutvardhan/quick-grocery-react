@@ -219,6 +219,7 @@ export default function Home() {
         >
           <FoodBlogSection />
         </motion.div>
+        <PartnerBrands />
 
         <motion.div
           variants={fadeInUp}
@@ -228,7 +229,6 @@ export default function Home() {
           <YouMayAlsoLike />
         </motion.div>
 
-        <PartnerBrands />
         <HappyCustomers />
       </motion.div>
     </AnimatePresence>
