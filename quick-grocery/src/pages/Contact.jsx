@@ -306,36 +306,111 @@ const Contact = () => {
         <div className={styles.faqInner}>
           <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
           <div className={styles.faqContainer}>
-            <div className={styles.faqItem}>
+            {/*
+            [
+              {
+                q: "How do I track my order?",
+                a: "You can track your order by logging into your account and navigating to the order history section. There, you'll find real-time updates on your order status.",
+              },
+              {
+                q: "What are your delivery hours?",
+                a: "We deliver from 9am to 9pm, seven days a week. You can select your preferred delivery window during checkout.",
+              },
+              {
+                q: "How do I return a product?",
+                a: "If you're not satisfied with a product, please contact our customer service within 24 hours of delivery, and we'll arrange a return or refund.",
+              },
+              {
+                q: "Do you offer same-day delivery?",
+                a: "Yes, we offer same-day delivery for orders placed before 2pm, subject to availability in your area.",
+              },
+            ].map((faq, i) => (
+              <motion.div
+                className={styles.faqItem}
+                key={faq.q}
+                whileHover={{
+                  background: "rgba(50,205,50,0.13)",
+                  boxShadow: "0 4px 24px rgba(50,205,50,0.10)",
+                  backdropFilter: "blur(2px)",
+                  borderRadius: "14px",
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <h3>{faq.q}</h3>
+                <p>{faq.a}</p>
+              </motion.div>
+            ))}
+            */}
+            <motion.div
+              className={styles.faqItem}
+              key="How do I track my order?"
+              whileHover={{
+                background: "rgba(50,205,50,0.13)",
+                boxShadow: "0 4px 24px rgba(50,205,50,0.10)",
+                backdropFilter: "blur(2px)",
+                borderRadius: "14px",
+                transition: { duration: 0.3 }
+              }}
+            >
               <h3>How do I track my order?</h3>
               <p>
                 You can track your order by logging into your account and
                 navigating to the order history section. There, you'll find
                 real-time updates on your order status.
               </p>
-            </div>
-            <div className={styles.faqItem}>
+            </motion.div>
+            <motion.div
+              className={styles.faqItem}
+              key="What are your delivery hours?"
+              whileHover={{
+                background: "rgba(50,205,50,0.13)",
+                boxShadow: "0 4px 24px rgba(50,205,50,0.10)",
+                backdropFilter: "blur(2px)",
+                borderRadius: "14px",
+                transition: { duration: 0.3 }
+              }}
+            >
               <h3>What are your delivery hours?</h3>
               <p>
                 We deliver from 9am to 9pm, seven days a week. You can select
                 your preferred delivery window during checkout.
               </p>
-            </div>
-            <div className={styles.faqItem}>
+            </motion.div>
+            <motion.div
+              className={styles.faqItem}
+              key="How do I return a product?"
+              whileHover={{
+                background: "rgba(50,205,50,0.13)",
+                boxShadow: "0 4px 24px rgba(50,205,50,0.10)",
+                backdropFilter: "blur(2px)",
+                borderRadius: "14px",
+                transition: { duration: 0.3 }
+              }}
+            >
               <h3>How do I return a product?</h3>
               <p>
                 If you're not satisfied with a product, please contact our
                 customer service within 24 hours of delivery, and we'll arrange
                 a return or refund.
               </p>
-            </div>
-            <div className={styles.faqItem}>
+            </motion.div>
+            <motion.div
+              className={styles.faqItem}
+              key="Do you offer same-day delivery?"
+              whileHover={{
+                background: "rgba(50,205,50,0.13)",
+                boxShadow: "0 4px 24px rgba(50,205,50,0.10)",
+                backdropFilter: "blur(2px)",
+                borderRadius: "14px",
+                transition: { duration: 0.3 }
+              }}
+            >
               <h3>Do you offer same-day delivery?</h3>
               <p>
                 Yes, we offer same-day delivery for orders placed before 2pm,
                 subject to availability in your area.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
